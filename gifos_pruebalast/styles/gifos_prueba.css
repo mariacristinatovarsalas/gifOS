@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color:#110038;
+    background-color: #f8f1f1;
 }
 
 #header {
@@ -15,7 +15,7 @@ body {
 }
 
 .titleBar {
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     color: #FFFFFF;
 }
     
@@ -40,9 +40,9 @@ body {
 .button {
     font-size: 1.2vw;
     color: #110038;
-    background: #EE3EFE;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    background-color: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     height: 7vh;
     width: 10.5vw;
     cursor: pointer;
@@ -70,9 +70,8 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .dropbtn {
-    background: #EE3EFE;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    background: #F7C9F3;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0  #FFFFFF;
     cursor: pointer;
     width: 10.5vw;
     height: 5.5vh;
@@ -148,7 +147,6 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-left: 84.5vw;
     position: absolute;
     margin-top: 8.8vh;
-    color: #FFFF;
 }
 
 #misGuifosButton:hover {
@@ -173,7 +171,7 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 #searchDiv {
     height: 20vh;
     width: 83.5vw;
-    background:#B4B4B4;
+    background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     margin-left: 7.8vw;
     position: absolute;
@@ -208,9 +206,9 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 
 
 #searchButton {
-    color: #8F8F8F ;
+    color: #B4B4B4;
     font-size: 2.5vh;
-    background:#B4B4B4;
+    background: #E6E6E6;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     width: 8vw;
@@ -317,7 +315,7 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-top: 0;
     width: 85.5%;
     margin-left: 6.9vw;
-    background-color:#110038;
+    background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -327,7 +325,7 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-top: 0;
     width: 83.1vw;
     margin-left: 8.1vw;
-    background-color:#110038;
+    background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -345,6 +343,8 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 
 .suggestionsBar {
     background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     width: 81.5vw;
     /*height: 4vh;*/
     font-family: 'Chakra Petch', sans-serif;
@@ -357,9 +357,6 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-bottom: 1vw;
     margin-left: 8vw;
     display: flex;
-    background: #FFFAFE;
-border: 1px solid #2E32FB;
-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
 .barrita {
@@ -376,9 +373,9 @@ box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 
 .buttonVerMas {
     
-    background: #2E32FB;
-border: 1px solid #4C2F99;
-box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
     font-family: 'Chakra Petch', sans-serif;
     width: 6vw;
     margin: 0;
@@ -421,7 +418,7 @@ box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
     margin-top: 30vh;
     width: 85vw;
     margin-left: 7vw;
-    background-color: #110038;
+    background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

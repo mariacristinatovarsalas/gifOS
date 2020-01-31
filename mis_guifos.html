@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="Maria Cristina Tovar">
+	<meta name="description" content="">
+	<title>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</title>
+	<link rel="" href="" sizes="" type="">
+    <link rel="stylesheet" href="styles/gifos_prueba.css" type="text/css" id="light">
+	<!--<link rel="stylesheet" href="styles/sailor_night.css" type="text/css">-->
+	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+</head>
+
+<body onload="themeChoosing()">
+	<header>
+		<div class="titleBar" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs
+			están.////// Número de visitas: 12.765.803</div>
+		<div id="header">
+			<img onclick="backToHome()" id="logo" src="styles/gifos_logo.png">
+			<button id="misGuifosButton" class="button" onclick="redirectToMisGuifos()">Mis Guifos</button>
+			<div class="dropdown">
+				<button onclick="dropdown()" class="dropbtn">Elegir tema</button>
+				<button onclick="dropdown()" class="dropbtn" id="arrowButton"><img src="dropdown.svg" alt="Down Arrow"
+					id="downArrow"></button>
+				<div id="dropdownContentBox" class="dropdownContent">
+					<ul id="stylesList">
+						<li><button class="sailorButtonOff" id="sailorDayButton" onclick="changeToLightTheme()">Sailor Day</button></li>
+						<li><button class="sailorButtonOff" onclick="changeToDarkTheme()">Sailor Night</button></li>
+					</ul>
+				</div>
+			</div>
+			<button onclick="redirectToCreateGifs()" class="button" id="crearGuifosButton">Crear Guifos</button>
+		</div>
+		
+	</header>
+		
+		<div id="misGuifosBar">Mis Guifos</div>
+		<div id="misGuifosContainer"></div>
+
+	
+
+	<div id="prueba"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+
+	<script src="js/mis_gifos.js"></script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color:#110038;
+    background-color: #f8f1f1;
 }
 
 #header {
@@ -15,7 +15,7 @@ body {
 }
 
 .titleBar {
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     color: #FFFFFF;
 }
     
@@ -40,9 +40,9 @@ body {
 .button {
     font-size: 1.2vw;
     color: #110038;
-    background: #EE3EFE;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    background-color: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     height: 7vh;
     width: 10.5vw;
     cursor: pointer;
@@ -70,9 +70,8 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .dropbtn {
-    background: #EE3EFE;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    background: #F7C9F3;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0  #FFFFFF;
     cursor: pointer;
     width: 10.5vw;
     height: 5.5vh;
@@ -127,6 +126,8 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin: 1.5vh;
     text-align: left;
     padding-left: 1vw;
+    padding-bottom: 1.3vh;
+    padding-top: 1.3vh;
 }
 
 .sailorButtonOff:active {
@@ -148,7 +149,7 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-left: 84.5vw;
     position: absolute;
     margin-top: 8.8vh;
-    color: #FFFF;
+    color: #110038;
 }
 
 #misGuifosButton:hover {
@@ -170,10 +171,10 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     width: 100%;
 }
 
-#searchDiv {
+.searchDiv {
     height: 20vh;
     width: 83.5vw;
-    background:#B4B4B4;
+    background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     margin-left: 7.8vw;
     position: absolute;
@@ -208,9 +209,9 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 
 
 #searchButton {
-    color: #8F8F8F ;
-    font-size: 2.5vh;
-    background:#B4B4B4;
+    color: #B4B4B4;
+    font-size: 1.2vw;
+    background: #E6E6E6;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     width: 8vw;
@@ -317,7 +318,7 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-top: 0;
     width: 85.5%;
     margin-left: 6.9vw;
-    background-color:#110038;
+    background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -327,7 +328,7 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-top: 0;
     width: 83.1vw;
     margin-left: 8.1vw;
-    background-color:#110038;
+    background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -345,6 +346,8 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 
 .suggestionsBar {
     background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     width: 81.5vw;
     /*height: 4vh;*/
     font-family: 'Chakra Petch', sans-serif;
@@ -357,28 +360,32 @@ box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     margin-bottom: 1vw;
     margin-left: 8vw;
     display: flex;
-    background: #FFFAFE;
-border: 1px solid #2E32FB;
-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
 .barrita {
-    width: 19.2vw;
-    height: 2.1vw;
+    width: 18.7vw;
+    /*height: 2.1vw;*/
     background-color: pink;
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     margin-left: 0.4vw;
     margin-top: 0.6vh;
     z-index: 1;
     position: absolute;
+    color: #FFFF;
+    font-weight: bold;
+    font-size: 2.2vh;
+    display: flex;
+    padding: 0;
+    height: 2.8vh;
+    padding: 1vh 0 1vh 0.5vw
 }
 
 
 .buttonVerMas {
     
-    background: #2E32FB;
-border: 1px solid #4C2F99;
-box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
     font-family: 'Chakra Petch', sans-serif;
     width: 6vw;
     margin: 0;
@@ -396,11 +403,10 @@ box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
 
 .closeButton {
     width: 1vw;
-    height: 2vh;
-    margin-top: 1.4vh;
+    margin-top: 2vh;
     margin-left: 18vw;
     /*border: 1px solid red;*/
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
     position: absolute;
   background-image: url("buttonClose.svg"); 
@@ -421,7 +427,7 @@ box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
     margin-top: 30vh;
     width: 85vw;
     margin-left: 7vw;
-    background-color: #110038;
+    background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -446,46 +452,46 @@ box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
     margin-left: 8vw;
 }
 
-#misGuifosContainer {
-    display: none;
-    margin: 1px solid red;
-}
 
 #trendings {
 margin-top: 10vh;
 }
 
-/*UPLOAD*/
+/*CREATE GIFS*/
 
 #crearGuifos {
     width: 50vw;
     margin-left: 24vw;
-    margin-top: 30vh;
-    height: 60vh;
+    margin-top: 20vh;
+    height: 62vh;;
+    background: #E6E6E6;
+box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 
 }
 
-#uploadDecorationBar {
+#uploadTitleBar {
     width: 49.3vw;
     margin-left: 0.2vw;
     margin-top: 0.3vh;
     position: absolute;
     font-size: 1.2vw;
     padding-left: 0.3vw;
-    height: 3.5vh;
+    padding-top: 0.7vh;
+    padding-bottom: 0.7vh;
 }
 
 p {
     font-size: 1.1vw;
     padding-left: 6vw;
-    padding-top: 14vh;
+    padding-top: 16vh;
     line-height: 2;
+    position: absolute;
 
 }
 
 h1 {
     position: absolute;
-    margin-top: 8vh;
+    margin-top: 10vh;
     margin-left: 6vw;
     font-size: 1.2vw;
 }
@@ -494,7 +500,7 @@ h1 {
     width: 2.5vw;    
     height: 5vh;
     z-index: 1;
-    top: 42vh;
+    top: 34vh;
     left: 26vw;
     position: absolute;
 }
@@ -502,19 +508,19 @@ h1 {
 #comenzarButton {
     position: absolute;
     margin-left: 37vw;
-    margin-top: 3vh;
+    margin-top: 52vh;
 
 }
 
 #cancelarButton {
     background-color: #FFF4FD;
     margin-left: 25vw;
-    margin-top: 3vh;
+    margin-top: 52vh;
     position: absolute;
 }
 
 .uploadButtons {
-    display: none;
+    display: inline-block;
 }
 
 
@@ -530,4 +536,367 @@ a {
     position: absolute;
     margin-left: 5vw;
     cursor: pointer;
+}
+
+#videoContainer {
+    width: 53vw;
+    height: 72vh;
+    display: none;
+    margin-top: 19vh;
+    margin-left: 23vw;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    position: absolute;
+    margin-bottom: 15vh;
+}
+
+#video {
+    width: 97%;
+    height: 77%;
+    display: inline-block;
+    margin-top: 6vh;
+    margin-left: 0.8vw;
+    object-fit: cover;
+    position: absolute;
+}
+
+#titleBarGifCapture {
+    z-index: 1;
+    padding: 0.5vh 0 0.5vh 0.3vw;
+    font-weight: bold;
+    width: 52.2vw;
+    margin-top: 0.5vh;
+    margin-left: 0.2vw;
+    position: absolute;
+    font-size: 1.2vw;
+}
+
+#cameraButton {
+    margin-top: 64vh;
+    margin-left: 38.5vw;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    height: 4.5vh;
+    width: 2.6vw;
+}
+
+#cameraPic {
+    z-index: 2;
+    margin-left: -0.6vw;
+    margin-top: -1.9vh;
+    position: absolute;
+    width: 1.2vw;
+    height: 4vh;
+}
+
+#capturarButton {
+    background: #F7C9F3;
+border: 1px solid #110038;
+box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+height: 4.5vh;
+padding: 0.5vh 3vw;
+font-size: 1.2vw;
+margin-left: 41vw;
+margin-top: 64vh;
+position: absolute;
+cursor: pointer;
+}
+
+#listoButton {
+background: #FF6161;
+border: 1px solid #110038;
+box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+height: 4.5vh;
+padding: 0.5vh 2vw;
+font-size: 1.2vw;
+margin-left: 44vw;
+margin-top: 64vh;
+position: absolute;
+cursor: pointer;
+width: 8vw;
+color: #FFFF;
+display: none;
+}
+
+#recordingButton {
+    margin-top: 64vh;
+    margin-left: 41.5vw;
+    background: #FF6161;
+border: 1px solid #110038;
+box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    height: 4.5vh;
+    width: 2.6vw;
+    color: #FFFF;
+    display: none;
+}
+
+#recordingIcon {
+    z-index: 2;
+    margin-left: -0.6vw;
+    margin-top: -1.5vh;
+    position: absolute;
+    width: 1.3vw;
+    height: 3vh;
+}
+
+#gifPreview {
+    width: 97%;
+    height: 77%;
+    display: inline-block;
+    margin-top: 6vh;
+    margin-left: 0.8vw;
+    object-fit: cover;
+    position: absolute;
+}
+
+#subirGuifoButton {
+    background: #F7C9F3;
+border: 1px solid #110038;
+box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+height: 4.5vh;
+padding: 0vw;
+width: 9vw;
+font-size: 1.2vw;
+margin-left: 43vw;
+margin-top: 64vh;
+position: absolute;
+cursor: pointer;
+display: none;
+}
+
+#repetirCapturaButton {
+    background:#FFF4FD ;
+    color: #110038;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    height: 4.5vh;
+    padding: 0.5vh 1vw;
+    font-size: 1.2vw;
+    margin-left: 31.4vw;
+    margin-top: 64vh;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+}
+
+#repetirCapturaButton:hover {
+    background: #F0E5EE;
+border: 1px solid #110038;
+box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+outline: 1px dotted #110038;
+    outline-offset: -4px;
+} 
+
+#uploadingGif {
+    background-color: #FFFF;
+    width: 51vw;
+    height: 55vh;
+    margin-top: 6vh;
+    margin-left: 1vw;
+    background: #FFFFFF;
+border: 1px solid #979797;
+box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+#cancelarUploadButton {
+    background: #FFF4FD;
+border: 1px solid #110038;
+box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+display: none;
+width: 10vw;
+height: 4vh;
+position: absolute;
+margin-top: 64vh;
+margin-left: 41.8vw;
+cursor: pointer;
+}
+
+#globeImg {
+    display: none;
+    width: 3vw;
+    height: 7vh;
+    margin-top: 14vh;
+    margin-left: 24vw;
+    position: absolute;
+}
+
+#h1UploadingGif {
+    display: none;
+    font-weight: bold;
+    color: #110038;
+    margin-top: 22vh;
+    margin-left: 18vw;
+    font-size: 1.2vw;
+    position: absolute;
+
+}
+
+#pUploadingGif {
+    display: none;
+    color: rgba(17,0,56,0.64);
+    margin-top: 18vh;
+    margin-left: 8vw;
+    position: absolute;
+    font-size: 1.2vw;
+}
+
+#span1 {
+    text-decoration: line-through;
+}
+
+#span2 {
+    border-bottom: 1px solid black;
+}
+
+#closeUploadButton {
+    margin-left: 51vw;
+    margin-top: 1.6vh;
+    position: absolute;
+
+}
+
+#misGuifosBar {
+    /*margin-top: 20vh;
+    position: absolute;*/
+    /*z-index: 2;*/
+    /*margin: 0;*/
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    font-size: 1.1vw;
+    padding: 0.7vh 0.6vw;
+    margin-top: 20vh;
+    width: 85vw;
+    margin-left: 6vw;
+    margin-bottom: 3vh;
+}
+
+#misGuifosContainer {
+    width: 87vw;
+    /*height: 90vh;*/
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 5.5vw;
+    margin-bottom: 8vh;
+    /*background-color: red;
+    display: flex;
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 28vw;
+    position: absolute;*/
+    /*z-index: 2;*/
+    /*margin-top: 50vh;
+    margin: 0;*/
+}
+
+#copiarEnlaceGuifoButton {
+   display: none; 
+   background:#FFF4FD;
+   margin-top: 18vh;
+   margin-left: 33vw;
+   width: 16vw;
+   padding: 0 1.7vw;
+   height: 6vh;
+}
+
+#descargarGuifoButton {
+    display: none;
+    background:#FFF4FD;
+    position: absolute;
+    width: 16vw;
+   padding: 0 1.7vw;
+   height: 6vh;
+   margin-top: 26vh;
+   margin-left: 33vw;
+}
+
+#listoCargaGifButton {
+    display: none;
+    position: absolute;
+    margin-top: 58vh;
+    margin-left: 38.5vw;
+    height: 6vh;
+}
+
+#pGuifoSubido {
+    display: none;
+    position: absolute;
+    font-weight: bold;
+    margin-left: 27vw;
+    margin-top: -4vh;
+}
+
+#finalGifDeposit {
+    
+    width: 99.3%;
+    height: 99%;
+    object-fit: cover;
+    margin-top: 0.2vh;
+    margin-left: 0.1vw;
+    display: none;
+}  
+
+#divFinalGifDeposit {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+width: 29vw;
+height: 40vh;
+margin-top: 8vh;
+    margin-left: 2vw;
+    position: absolute;
+    display: none;
+}
+
+.gifShowedInMisGuifosContainer {
+    width: 20vw;
+    height: 40vh;
+    flex:auto;
+    margin: 0.5vw;
+}
+
+#divSearchSuggestions {
+    z-index: 4;
+    margin-left: 0vw;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    display: none;
+}
+
+#divSearchSuggestions > div {
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    width: 80vw;
+    height: 5vh;
+    margin-left: 1.5vw;
+    margin-top: 2vh;
+}
+
+.searchedTermBlock {
+    width: 11vw;
+    background-color: blue;
+    height: 4.5vh;
+    margin-right: 1vw;
+    background: #4180F6;
+    color: #FFFF;
+border: 1px solid #4C2F99;
+box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+
+#searchedTermBlockContainer {
+    width: 83vw;
+    height: 8vh;
+    border: 1px solid red;
+    margin-top: 26vh;
+    margin-left: 8vw;
+    display: none;
 }

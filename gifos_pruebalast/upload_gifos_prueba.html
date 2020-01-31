@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="Maria Cristina Tovar">
+	<meta name="description" content="">
+	<title></title>
+	<link rel="" href="" sizes="" type="">
+    <link rel="stylesheet" href="styles/gifos_prueba.css" type="text/css">
+	<link rel="stylesheet" href="styles/sailor_night.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<header>
+		<div class="decorationBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! 
+		——————Donde los gifs están.////// Número de visitas: 12.765.803</div>
+		<a onclick="backToHome()"><img src="backToHome.svg" id="home" alt="Back to home"></a>
+		<img id="logo" src="gifos_logo.png">
+	</header>
+
+	<section class="search" id="crearGuifos">
+		<div class="decorationBars" id="uploadDecorationBar">Crear Guifos</div>
+		<img src="windowPic.png" id="windowPic" alt="Window">
+		<h1><b>Aquí podrás crear tus propios guifos</b></h1>
+		<p>Crear tu <b><i>guifo</i></b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos<br>personalizados. 
+			Los pasos para crear tu guifo son:<br>
+			<b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)<br>
+			<b>2)</b> Capturar tu momento guifo<br>
+			<b>3)</b> Revisar el momento<br>
+			<b>4)</b> Listo para subir y compartir!<br>
+			¿Quieres comenzar a crear tu <b><i>guifo</i></b> ahora?</p>
+		<button class="button" id="comenzarButton">Comenzar</button>
+		<button class="button" id="cancelarButton">Cancelar</button>
+	</section>
+
+	<video id="video"></video>
+	<button onclick="getStream()" class="uploadButtons">Comenzar</button>
+	<button onclick="startRecord()" class="uploadButtons">Grabar</button>
+	
+	<button onclick="stopRecord()"class="uploadButtons" >Listo</button>
+	<button onclick="uploadGif()" class="uploadButtons">Subir Guifo</button>
+	<img id="gifPreview">
+
+
+	<div id="prueba"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+
+	<script src="js/upload_gifos_prueba.js"></script>
+
+</body>
+
+</html>
