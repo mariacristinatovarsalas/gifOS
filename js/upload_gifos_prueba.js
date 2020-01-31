@@ -5,6 +5,17 @@ function themeChoosing() {
         changeToLightTheme()
     }
 }
+var urlUltimoUpload = "Chanfle"
+var gifoprueba
+function descargarGuifo(hola){
+
+    var mil = document.getElementById("finalGifDeposit")
+    hola.href=gifoprueba
+}
+
+function listoGuifo(){
+    location.replace("/mis_guifos.html")
+}
 
 function changeToLightTheme() {
     //console.log("to light")
@@ -22,7 +33,6 @@ function changeToDarkTheme() {
     document.getElementById("lupa").setAttribute("src", "lupaDark.svg")
 }
 
-var urlUltimoUpload = "Chanfle"
 
 var gifHechosGuardados = JSON.parse(localStorage.getItem('gifHechos'))
 var divGifHechos = document.getElementById("misGuifosContainer")
@@ -47,8 +57,11 @@ gifHechosGuardados.forEach(function (gif) {
     let idgif = gif.data.id
     let url = "https://media0.giphy.com/media/" + idgif + "/giphy.gif"
     let img = document.createElement("img")
+    // let descargar= document.getElementById("paraDescargar")
     img.setAttribute('class', 'gifShowedInMisGuifosContainer')
     img.setAttribute('src', url)
+// descargar.setAttribute("href",url)
+
     divGifHechos.appendChild(img)
 })
 
@@ -149,6 +162,7 @@ function showPreview(blob) {
     document.getElementById("subirGuifoButton").style.display = "inline-block";
 
     url = URL.createObjectURL(blob)
+    gifoprueba=url
     //URL.revokeObjectURL(url);
     console.log(url)
     document.getElementById("gifPreview").src = url;
@@ -228,10 +242,7 @@ function uploadGif() {
 
 function showData(res) {
     gifHechosGuardados.push(res)
-
     localStorage.setItem('gifHechos', JSON.stringify(gifHechosGuardados));
-
-    console.log(gifHechosGuardados)
 }
 
 function copiarEnlaceGuifo() {
