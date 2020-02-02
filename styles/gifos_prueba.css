@@ -244,7 +244,7 @@ body {
 }
 
 #suggestions {
-    margin-top: 36vh;
+    margin-top: 10vh;
     padding-top: 0;
 }
 
@@ -424,7 +424,7 @@ body {
 }*/
 
 #searchResultsContainer {
-    margin-top: 30vh;
+    margin-top: 8vh;
     width: 85vw;
     margin-left: 7vw;
     background-color: #f8f1f1;
@@ -882,21 +882,29 @@ margin-top: 8vh;
 }
 
 .searchedTermBlock {
-    width: 11vw;
+   padding: 1vh;
     background-color: blue;
     height: 4.5vh;
     margin-right: 1vw;
     background: #4180F6;
     color: #FFFF;
+    margin-bottom: 2vh;
 border: 1px solid #4C2F99;
 box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+font-size: 1.1vw;
 }
 
 #searchedTermBlockContainer {
-    width: 83vw;
-    height: 8vh;
-    border: 1px solid red;
-    margin-top: 26vh;
-    margin-left: 8vw;
-    display: none;
+    width: 84.6vw;
+    height: 5vh;
+    /*border: 1px solid red;*/
+    margin-top: 28vh;
+    margin-left: 7.7vw;
+    display: flex;
+    flex-direction: row-wrap;
+    overflow: hidden;
+}
+
+#paraDescargar{
+    margin: 0;
 }

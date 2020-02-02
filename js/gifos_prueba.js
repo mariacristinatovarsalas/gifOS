@@ -1,11 +1,10 @@
 function themeChoosing() {
-  if(localStorage.getItem('theme')==='dark') {
+  if (localStorage.getItem('theme') === 'dark') {
     changeToDarkTheme()
   } else {
     changeToLightTheme()
   }
 }
-
 
 /*VARIABLES*/
 
@@ -13,6 +12,11 @@ const apiKey = 'R6HlZmoZACiHenAqEf5l0jeXFDt2zUDG'
 var url
 var gifContainer
 var suggestedTerm
+var historial = []
+if (localStorage.getItem("historial")) {
+  historial = localStorage.getItem("historial").split(",")
+}
+console.log(historial)
 
 /*function showThemeOptions() {
   document.getElementById("themesContainer").classList.toggle("show");
@@ -21,6 +25,10 @@ var suggestedTerm
 function popi(){
   document.getElementsByClassName("pop").style.backgroundColor = "red";
 }*/
+
+function backToHome() {
+  location.replace("gifos_prueba.html")
+}
 
 function changeToLightTheme() {
   //console.log("to light")
@@ -95,9 +103,9 @@ function serverRequest(url, gifContainer, classicShowData, Term, smallTrendingCo
       url = 'http://api.giphy.com/v1/gifs/search?q=' + suggestedTerm + '&api_key=' + apiKey + '&limit=1'
     }
     else {
-      url = 'http://api.giphy.com/v1/gifs/random?api_key=' + apiKey 
+      url = 'http://api.giphy.com/v1/gifs/random?api_key=' + apiKey
     }
-     gifContainer = 'suggestionsContainer'
+    gifContainer = 'suggestionsContainer'
     serverRequest(url, gifContainer, false, suggestedTerm);
 
   }
@@ -131,59 +139,69 @@ function loadTrendings() {
 /*GET SEARCH RESULTS FUNCTION*/
 
 function getSearchResults(Term) {
+
+
   let searchedTerm
   document.getElementById(gifContainer).innerHTML = "";
-  
 
   if (Term) {
     searchedTerm = Term
   }
   else {
     searchedTerm = document.getElementById("searchBar").value
+    if (searchedTerm == "") { return }
+    historial.push(searchedTerm)
+    localStorage.setItem("historial", historial.join(","))
   }
-  url = 'http://api.giphy.com/v1/gifs/search?q=' + searchedTerm + '&api_key=' + apiKey + '&limit=24'
-  gifContainer = 'searchResultsContainer'
-  serverRequest(url, gifContainer, true)
-  document.getElementById('suggestions').style.display = "none";
-  document.getElementById('trendings').style.display = "none";
-  document.getElementById('searchResultsContainer').style.display = "flex";
+  if (searchedTerm !== "") {
 
-  
+    url = 'http://api.giphy.com/v1/gifs/search?q=' + searchedTerm + '&api_key=' + apiKey + '&limit=24'
+    gifContainer = 'searchResultsContainer'
+    serverRequest(url, gifContainer, true)
+    document.getElementById('suggestions').style.display = "none";
+    document.getElementById('trendings').style.display = "none";
+    document.getElementById('searchResultsContainer').style.display = "flex";
 
-
-
-  var presentGifInLocalStorage = false
-  var i = 1
-  while (presentGifInLocalStorage == false) {
-    if (localStorage.getItem("gifo" + i) == null) {
-      localStorage.setItem("gifo" + i, JSON.stringify(searchedTerm))
-      presentGifInLocalStorage = true
-    } else if (i == 4) {
-      localStorage.setItem("gifo" + (Math.floor(Math.random() * 4) + 1), JSON.stringify(searchedTerm))
-      presentGifInLocalStorage = true
-    }
-    else {
-      i++
+    var presentGifInLocalStorage = false
+    var i = 1
+    while (presentGifInLocalStorage == false) {
+      if (localStorage.getItem("gifo" + i) == null) {
+        localStorage.setItem("gifo" + i, JSON.stringify(searchedTerm))
+        presentGifInLocalStorage = true
+      } else if (i == 4) {
+        localStorage.setItem("gifo" + (Math.floor(Math.random() * 4) + 1), JSON.stringify(searchedTerm))
+        presentGifInLocalStorage = true
+      }
+      else {
+        i++
+      }
     }
   }
 
-  
   //localStorage.setItem(searchedTerm, JSON.stringify(searchedTerm));
-
   //document.getElementById("suggestionsBar").style.display = "none";
 }
 
 
 
 function displayBlueButtons() {
-  var searchedTerm = document.getElementById("searchBar").value;
-  var searchedTermBlock = document.createElement("BUTTON")
-  searchedTermBlock.setAttribute('class', 'searchedTermBlock')
-  searchedTermBlock.innerHTML = searchedTerm
-  searchedTermBlock.onclick=getSearchResults;
-  var searchedTermBlockContainer = document.getElementById("searchedTermBlockContainer") 
-  searchedTermBlockContainer.appendChild(searchedTermBlock)
+  console.log(historial)
+  var searchedTermBlockContainer = document.getElementById("searchedTermBlockContainer")
+  searchedTermBlockContainer.innerHTML = ""
+  historial = localStorage.getItem("historial").split(",")
+  console.log(historial)
+  historial.reverse().forEach(busquedaVieja => {
+
+    var searchedTermBlock = document.createElement("BUTTON")
+    searchedTermBlock.setAttribute('class', 'searchedTermBlock')
+    searchedTermBlock.innerHTML = '#' + busquedaVieja
+    searchedTermBlock.setAttribute("onclick", "getSearchResults('" + busquedaVieja + "')");
+    searchedTermBlockContainer.appendChild(searchedTermBlock)
+
+  })
+
 }
+displayBlueButtons()
 
 
 /*function funcionprueba(data){
@@ -198,13 +216,13 @@ function displayBlueButtons() {
 
 function showData(data, gifContainer, classicShowData, Term) {
   // document.getElementById(gifContainer).innerHTML = "";
-  if(Array.isArray(data.data)){
-    data.data.forEach(gif=>{pintarGif(gif)})
-  }else{
+  if (Array.isArray(data.data)) {
+    data.data.forEach(gif => { pintarGif(gif) })
+  } else {
     pintarGif(data.data)
   }
-    var i = 0
-    function pintarGif (gif) {
+  var i = 0
+  function pintarGif(gif) {
     i++
     var createdImageToContainGif = document.createElement("IMG")
     createdImageToContainGif.setAttribute('src', gif.images.original.url)
@@ -236,7 +254,7 @@ function showData(data, gifContainer, classicShowData, Term) {
       })
       var gifTitleString = gifTitleArrayUpperCase.join(" ")
       var gifName = gifTitleString.replace(" ", "").replace("GIF", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "")
-      .replace(" ", "").replace(" ", "");
+        .replace(" ", "").replace(" ", "");
 
 
 
@@ -246,14 +264,14 @@ function showData(data, gifContainer, classicShowData, Term) {
       var buttonVerMas = document.createElement("BUTTON")
       buttonVerMas.setAttribute('class', 'buttonVerMas')
       buttonVerMas.innerHTML = "Ver más...";
-      buttonVerMas.setAttribute('onclick', 'getSearchResults("' + Term + '")')
+      buttonVerMas.setAttribute('onclick', 'getSearchResults("' + gif.title + '")')
       //var iconClose = document.createElement("IMG")
       //iconClose.setAttribute('src', './buttonClose.svg')
       //iconClose.setAttribute('class', 'icon')
       var closeButton = document.createElement("BUTTON")
       //closeButton.appendChild(iconClose)
       closeButton.setAttribute('class', 'closeButton')
-      closeButton.onclick = function removeSuggestionGif(){
+      closeButton.onclick = function removeSuggestionGif() {
         localStorage.removeItem("gifo" + i, suggestedTerm);
       }
 
@@ -271,6 +289,8 @@ function showData(data, gifContainer, classicShowData, Term) {
 
 
 
+
+
 /*function showMyGifSection() {
   document.getElementById("trendings").style.display = "none";
   document.getElementById("searchSection").style.display = "none";
@@ -278,20 +298,30 @@ function showData(data, gifContainer, classicShowData, Term) {
   document.getElementById("misGuifosContainer").style.display = "block";
 }*/
 
-/*function displaySuggestedSearchTerms() {
-  document.getElementById("divSearchSuggestions").style.display = "flex";
-}*/
+function displaySuggestedSearchTerms() {
+  var searchBar = document.getElementById("searchBar").value;
+  var divSearchSuggestions = document.getElementById("divSearchSuggestions")
+  divSearchSuggestions.innerHTML = ""
 
-/*function hideSuggestedSearchTerms() {
-  var searchBar = document.getElementById("searchBar").innerHTML = "";
-  if (searchBar===true) {
-    document.getElementById("divSearchSuggestions").style.display = "none";
+  if (searchBar == "") {
+    divSearchSuggestions.style.display = "none";
   }
   else {
-    document.getElementById("divSearchSuggestions").style.display = "flex";
-  }
-}*/
+    divSearchSuggestions.style.display = "flex";
+    var filtrados = historial.filter(terminoBuscado => terminoBuscado.includes(searchBar))
+    for (let i = 0; i < 3; i++) {
+      var termino = filtrados[i]
+      if (termino != undefined) {
+        dibujoFiltrado = document.createElement("DIV")
+        dibujoFiltrado.setAttribute("class", "searchSuggestionTerm")
+        dibujoFiltrado.innerHTML = termino
+        dibujoFiltrado.setAttribute("onclick","getSearchResults('"+termino+"')")
+        divSearchSuggestions.appendChild(dibujoFiltrado)
 
+      }
+    }
+  }
+}
 
 
 
