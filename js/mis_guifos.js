@@ -1,4 +1,4 @@
-function themeChoosing() {
+function themeSelection() {
     if(localStorage.getItem('theme')==='dark') {
       changeToDarkTheme()
     } else {
@@ -10,8 +10,8 @@ function themeChoosing() {
 function changeToLightTheme() {
     //console.log("to light")
     localStorage.setItem('theme', 'light')
-    document.getElementById("light").setAttribute("href", "styles/gifos_prueba.css")
-    document.getElementById("logo").setAttribute("src", "styles/gifos_logo.png")
+    document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
+    document.getElementById("logo").setAttribute("src", "../images/gifos_logo_light.png")
     document.getElementById("lupa").setAttribute("src", "lupa_inactive.svg")
   }
   
@@ -19,7 +19,7 @@ function changeToLightTheme() {
     //console.log("to dark")
     localStorage.setItem('theme', 'dark')
     document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
-    document.getElementById("logo").setAttribute("src", "styles/logoDark.png")
+    document.getElementById("logo").setAttribute("src", "../images/gifos_logo_dark.png")
     document.getElementById("lupa").setAttribute("src", "lupaDark.svg")
   }
   
@@ -34,11 +34,11 @@ if (!Array.isArray(gifHechosGuardados)) {
 }
 
 function redirectToCreateGifs() {
-    location.replace("upload_gifos_prueba.html")
+    location.replace("upload.html")
   }
 
   function backToHome() {
-    location.replace("gifos_prueba.html")
+    location.replace("home.html")
   }
 
   
@@ -55,11 +55,11 @@ gifHechosGuardados.forEach(function (gif) {
 
 
 function dropdown() {
-    document.getElementById("dropdownContentBox").classList.toggle("show");
+    document.getElementById("dropdownContent").classList.toggle("show");
   }
   
   window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
+    if (!event.target.matches('.pinkButtons')) {
       var dropdowns = document.getElementsByClassName("dropdownContent");
       var i;
       for (i = 0; i < dropdowns.length; i++) {
@@ -79,20 +79,20 @@ function dropdown() {
 
 
 function backToHome() {
-    location.replace("./gifos_prueba.html")
+    location.replace("./home.html")
 }
 
 /*function changeToLightTheme() {
     //console.log("to light")
-    document.getElementById("light").setAttribute("href", "styles/gifos_prueba.css")
-    document.getElementById("logo").setAttribute("src", "styles/gifos_logo.png")
+    document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
+    document.getElementById("logo").setAttribute("src", "styles/gifos_logo_light.png")
   }
   
   function changeToDarkTheme() {
     //console.log("to dark")
   
     document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
-    document.getElementById("logo").setAttribute("src", "styles/logoDark.png")
+    document.getElementById("logo").setAttribute("src", "../images/gifos_logo_dark.png")
   }*/
 
 const apiKey = 'R6HlZmoZACiHenAqEf5l0jeXFDt2zUDG'

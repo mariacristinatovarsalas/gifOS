@@ -9,22 +9,21 @@
 	<meta name="description" content="">
 	<title>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</title>
 	<link rel="" href="" sizes="" type="">
-    <link rel="stylesheet" href="styles/gifos_prueba.css" type="text/css" id="light">
-	<!--<link rel="stylesheet" href="styles/sailor_night.css" type="text/css">-->
+    <link rel="stylesheet" href="styles/sailor_day.css" type="text/css" id="light">
 	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
 
-<body onload="themeChoosing()">
+<body onload="themeSelection()">
 	<header>
-		<div class="titleBar" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! 
+		<div class="titleBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! 
 		——————Donde los gifs están.////// Número de visitas: 12.765.803</div>
-		<a onclick="backToHome()"><img src="backToHome.svg" id="home" alt="Back to home"></a>
-		<img onclick="backToHome()" id="logo" src="styles/gifos_logo.png">
+		<a onclick="backToHome()"><img src="images/arrow_back.svg" id="arrowBack" alt="Back to home"></a>
+		<img onclick="backToHome()" id="logo" src="../images/gifos_logo_light.png">
 	</header>
 
-	<section id="crearGuifos">
-		<div class="titleBar" id="uploadTitleBar">Crear Guifos</div>
-		<img src="windowPic.png" id="windowPic" alt="Window">
+	<section class="grayContainer" id="crearGuifos">
+		<div class="titleBars" id="uploadTitleBar">Crear Guifos</div>
+		<img src="images/window.png" id="window" alt="Window">
 		<h1><b>Aquí podrás crear tus propios guifos</b></h1>
 		<p>Crear tu <b><i>guifo</i></b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos<br>personalizados. 
 			Los pasos para crear tu guifo son:<br>
@@ -33,32 +32,32 @@
 			<b>3)</b> Revisar el momento<br>
 			<b>4)</b> Listo para subir y compartir!<br>
 			¿Quieres comenzar a crear tu <b><i>guifo</i></b> ahora?</p>
-		<button class="button" id="comenzarButton" onclick="getStream()">Comenzar</button>
-		<button class="button" id="cancelarButton">Cancelar</button>
+		<button class="pinkButtons" id="comenzarButton" onclick="getStream()">Comenzar</button>
+		<button class="pinkButtons" id="cancelarButton">Cancelar</button>
 	</section>
 
 
 		<div id="videoContainer">
 			<video id="video"></video>
-			<div class="titleBar" id="titleBarGifCapture">Un Chequeo Antes de Empezar</div>
+			<div class="titleBars" id="titleBarGifCapture">Un Chequeo Antes de Empezar</div>
 			<button onclick="redirectToCreateGifs()" id="closeUploadButton" class="closeButton"></button>
-			<button onclick="startRecord()" id="cameraButton"><img src="cameraPic.svg" id="cameraPic"></button>
+			<button onclick="startRecord()" id="cameraButton"><img src="images/camera.svg" id="cameraIcon"></button>
 			<button onclick="startRecord()" id="capturarButton">Capturar</button>
-			<button onclick="stopRecord()" id="recordingButton"><img src="recordingIcon.svg" id="recordingIcon"></button>
+			<button onclick="stopRecord()" id="recordingButton"><img src="images/recording.svg" id="recordingIcon"></button>
 			<button onclick="stopRecord()" id="listoButton">Listo</button>
 			<img id="gifPreview">
 			<button onclick="showPreview()" id="repetirCapturaButton">Repetir Captura</button>
 			<button onclick="uploadGif()" id="subirGuifoButton">Subir Guifo</button>	
 			<button onclick="cancelarUploadButton()" id="cancelarUploadButton">Cancelar</button>
 			<div id="uploadingGif">
-				<img src="globeImg.png" id="globeImg">
+				<img src="images/globe.png" id="globeImg">
 				<h1 id="h1UploadingGif">Estamos subiendo tu guifo...</h1>
 				<p id="pUploadingGif">Tiempo restante: <span id="span2">38 años</span> algunos minutos</p>
 			</div>
 			<p id="pGuifoSubido">Guifo creado con éxito</p>
-			<button onclick="copiarEnlaceGuifo()" class="button" id="copiarEnlaceGuifoButton">Copiar Enlace Guifo</button>
-			<a id="paraDescargar" onclick="descargarGuifo(this)" download="guifo"><button class="button" id="descargarGuifoButton">Descargar Guifo</button></a>
-			<button onclick="listoGuifo()" id="listoCargaGifButton" class="button">Listo</button>
+			<button onclick="copiarEnlaceGuifo()" class="pinkButtons" id="copiarEnlaceGuifoButton">Copiar Enlace Guifo</button>
+			<a id="paraDescargar" onclick="descargarGuifo(this)" download="guifo"><button class="pinkButtons" id="descargarGuifoButton">Descargar Guifo</button></a>
+			<button onclick="listoGuifo()" id="listoCargaGifButton" class="pinkButtons">Listo</button>
 			<div id=divFinalGifDeposit><img id="finalGifDeposit"></div>
 		</div>
 		
@@ -70,7 +69,7 @@
 	<div id="prueba"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
 
-	<script src="js/upload_gifos_prueba.js"></script>
+	<script src="js/upload.js"></script>
 
 </body>
 

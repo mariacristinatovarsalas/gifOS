@@ -9,30 +9,30 @@
 	<meta name="description" content="">
 	<title>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</title>
 	<link rel="" href="" sizes="" type="">
-    <link rel="stylesheet" href="styles/gifos_prueba.css" type="text/css" id="light">
+    <link rel="stylesheet" href="styles/sailor_day.css" type="text/css" id="light">
 	<!--<link rel="stylesheet" href="styles/sailor_night.css" type="text/css">-->
 	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
 
-<body onload="themeChoosing()">
+<body onload="themeSelection()">
 	<header>
-		<div class="titleBar" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs
+		<div class="titleBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs
 			están.////// Número de visitas: 12.765.803</div>
 		<div id="header">
-			<img onclick="backToHome()" id="logo" src="styles/gifos_logo.png">
-			<button id="misGuifosButton" class="button" onclick="redirectToMisGuifos()">Mis Guifos</button>
+			<img onclick="backToHome()" id="logo" src="../images/gifos_logo_light.png">
+			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()">Mis Guifos</button>
 			<div class="dropdown">
 				<button onclick="dropdown()" class="dropbtn">Elegir tema</button>
-				<button onclick="dropdown()" class="dropbtn" id="arrowButton"><img src="dropdown.svg" alt="Down Arrow"
-					id="downArrow"></button>
-				<div id="dropdownContentBox" class="dropdownContent">
+				<button onclick="dropdown()" class="dropbtn" id="arrowButton"><img src="images/arrow_dropdown.svg" alt="Down Arrow"
+					id="arrowDropdown"></button>
+				<div id="dropdownContent" class="dropdownContent">
 					<ul id="stylesList">
-						<li><button class="sailorButtonOff" id="sailorDayButton" onclick="changeToLightTheme()">Sailor Day</button></li>
-						<li><button class="sailorButtonOff" onclick="changeToDarkTheme()">Sailor Night</button></li>
+						<li><button class="sailorButton" id="sailorDayButton" onclick="changeToLightTheme()">Sailor Day</button></li>
+						<li><button class="sailorButton" onclick="changeToDarkTheme()">Sailor Night</button></li>
 					</ul>
 				</div>
 			</div>
-			<button onclick="redirectToCreateGifs()" class="button" id="crearGuifosButton">Crear Guifos</button>
+			<button onclick="redirectToCreateGifs()" class="pinkButtons" id="crearGuifosButton">Crear Guifos</button>
 		</div>
 		
 	</header>
@@ -45,7 +45,7 @@
 	<div id="prueba"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
 
-	<script src="js/mis_gifos.js"></script>
+	<script src="js/mis_guifos.js"></script>
 
 </body>
 
