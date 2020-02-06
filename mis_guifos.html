@@ -6,44 +6,39 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="Maria Cristina Tovar">
-	<meta name="description" content="">
+	<meta name="description" content="¡Bienvenidos/as a Guifos.com! ——————
+	Donde los gifs están.////// Número de visitas: 12.765.803">
 	<title>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</title>
 	<link rel="" href="" sizes="" type="">
     <link rel="stylesheet" href="styles/sailor_day.css" type="text/css" id="light">
-	<!--<link rel="stylesheet" href="styles/sailor_night.css" type="text/css">-->
 	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
 
 <body onload="themeSelection()">
+
 	<header>
-		<div class="titleBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs
-			están.////// Número de visitas: 12.765.803</div>
-		<div id="header">
-			<img onclick="backToHome()" id="logo" src="../images/gifos_logo_light.png">
-			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()">Mis Guifos</button>
-			<div class="dropdown">
-				<button onclick="dropdown()" class="dropbtn">Elegir tema</button>
-				<button onclick="dropdown()" class="dropbtn" id="arrowButton"><img src="images/arrow_dropdown.svg" alt="Down Arrow"
-					id="arrowDropdown"></button>
+		<div class="titleBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! 
+		——————Donde los gifs están.////// Número de visitas: 12.765.803</div>
+		<nav>
+			<img onclick="backToHome()" id="logo" src="images/gifos_logo_light.png">
+			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span class="span1">M</span>is Guifos</button>
+			<div id="dropdown">
+				<button onclick="dropdown()" class="pinkButtons">Elegir tema</button>
+				<button onclick="dropdown()" class="pinkButtons" id="arrowButton"><img id="downArrow" src="images/arrow_dropdown.svg" alt="Dropdown Arrow"></button>
 				<div id="dropdownContent" class="dropdownContent">
 					<ul id="stylesList">
-						<li><button class="sailorButton" id="sailorDayButton" onclick="changeToLightTheme()">Sailor Day</button></li>
-						<li><button class="sailorButton" onclick="changeToDarkTheme()">Sailor Night</button></li>
+						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span class="span1">S</span></u>ailor Day</button></li>
+						<li><button class="sailorButtons" onclick="changeToDarkTheme()">Sailor Night</button></li>
 					</ul>
 				</div>
 			</div>
 			<button onclick="redirectToCreateGifs()" class="pinkButtons" id="crearGuifosButton">Crear Guifos</button>
-		</div>
-		
+		</nav>
 	</header>
+
 		
-		<div id="misGuifosBar">Mis Guifos</div>
+		<div class="whiteBars" id="misGuifosBar">Mis Guifos</div>
 		<div id="misGuifosContainer"></div>
-
-	
-
-	<div id="prueba"></div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
 
 	<script src="js/mis_guifos.js"></script>
 

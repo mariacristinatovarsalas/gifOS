@@ -11,7 +11,8 @@ var historial = []
 
 /* BACK TO HOME */
 
-/* Whatever element that executes this function with a click allows you to get back to the homepage */
+/* Every element that executes this function with a click allows 
+you to get back to the homepage */
 
 function backToHome() {
   location.replace("home.html")
@@ -19,9 +20,9 @@ function backToHome() {
 
 
 
-/* REDIRECT TO CREATE GIFS*/
+/* REDIRECT TO CREATE GIFS */
 
-/* Takes you to the create gifs page */
+/* Takes you to the page where you can create your own gifs */
 
 function redirectToCreateGifs() {
   location.replace("./upload.html")
@@ -36,7 +37,6 @@ function redirectToCreateGifs() {
 function redirectToMisGuifos() {
   location.replace("./mis_guifos.html")
 }
-
 
 
 
@@ -64,8 +64,9 @@ window.onclick = function (event) {
 
 /* THEME SELECTION */
 
-/* When the website loads, this function access the Local Storage to identify the existence of a key 'theme' with a value of 'light' or 'dark'.
-Depending on the existing value, it executes a function or another */
+/* When the website loads, this function access the Local Storage to identify the 
+existence of a key 'theme' with a value of 'light' or 'dark'. Depending on the existing value,
+it executes a function or another */
 
 function themeSelection() {
   if (localStorage.getItem('theme') === 'dark') {
@@ -79,14 +80,14 @@ function changeToDarkTheme() {
   localStorage.setItem('theme', 'dark')
   document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
   document.getElementById("logo").setAttribute("src", "images/gifos_logo_dark.png")
-  document.getElementById("lupa").setAttribute("src", "images/lupa_inactive_dark.svg")
+  document.getElementById("lens").setAttribute("src", "images/lens_inactive_dark.svg")
 }
 
 function changeToLightTheme() {
   localStorage.setItem('theme', 'light')
   document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
   document.getElementById("logo").setAttribute("src", "images/gifos_logo_light.png")
-  document.getElementById("lupa").setAttribute("src", "images/lupa_inactive_light.svg")
+  document.getElementById("lens").setAttribute("src", "images/lens_inactive_light.svg")
 }
 
 
@@ -98,30 +99,35 @@ function changeToLightTheme() {
 /* Executes the gif search when pressing the search button */
 
 function getSearchResults(Term) {
-console.log(Term)
   let searchedTerm
+  /* Empties the gif container */
   document.getElementById(gifContainer).innerHTML = "";
 
   if (Term) {
-  
     searchedTerm = Term
   }
   else {
+    /* The searched term is introduced in the search history array
+    and saved in Local Storage as a string */
     searchedTerm = document.getElementById("searchBar").value
-    if (searchedTerm == "") { return }
+    /* If the function is executed with an empty string, it returns nothing */
+    if (searchedTerm == "") { return } 
     historial.push(searchedTerm)
     localStorage.setItem("historial", historial.join(","))
   }
 
   if (searchedTerm !== "") {
-
+    /* If search term is different from an empty string, the server request function
+    is executed with the following parameters */
     url = 'http://api.giphy.com/v1/gifs/search?q=' + searchedTerm + '&api_key=' + apiKey + '&limit=24'
     gifContainer = 'searchResultsContainer'
     serverRequest(url, gifContainer, true)
+    // CAMBIA CON EL SCROLL DOWN
     document.getElementById('suggestionsSection').style.display = "none";
     document.getElementById('trendingsSection').style.display = "none";
     document.getElementById('searchResultsContainer').style.display = "flex";
 
+    //COLOCAR EXPLICACION AQUÍ
     var presentGifInLocalStorage = false
     var i = 1
     while (presentGifInLocalStorage == false) {
@@ -145,21 +151,20 @@ console.log(Term)
 /* Show searched terms displayed in blue buttons under the search section */
 
 function displayBlueButtons() {
-  console.log(historial)
   var blueButtonsContainer = document.getElementById("blueButtonsContainer")
-  blueButtonsContainer.innerHTML = ""
+  /* Turns the search history array into a string */
   historial = localStorage.getItem("historial").split(",")
-  console.log(historial)
-  historial.reverse().forEach(busquedaVieja => {
 
+  /* Use reverse method to show the last search at the search suggestions container's top left*/
+  historial.reverse().forEach(function(previousSearch) {
+    /* When there's an iteration of the previous search array it prints the terms
+    as blue buttons in the screen */
     var blueButton = document.createElement("BUTTON")
     blueButton.setAttribute('class', 'blueButton')
-    blueButton.innerHTML = '#' + busquedaVieja
-    blueButton.setAttribute("onclick", "getSearchResults('" + busquedaVieja + "')");
+    blueButton.innerHTML = '#' + previousSearch
+    blueButton.setAttribute("onclick", "getSearchResults('" + previousSearch + "')");
     blueButtonsContainer.appendChild(blueButton)
-
   })
-
 }
 displayBlueButtons()
 
@@ -174,10 +179,8 @@ It's executed with every "KeyUp" event in the search bar */
 function displaySuggestedSearchTerms() {
   /* Identifies the current value of the search bar after every "KeyUp" event */
   var searchBar = document.getElementById("searchBar").value;
-
   /* Identifies div that contains dynamic searchs */
   var divSearchSuggestions = document.getElementById("divSearchSuggestions")
-
   /* Refreshes div content for every "KeyUp" event */
   divSearchSuggestions.innerHTML = ""
 
@@ -185,39 +188,35 @@ function displaySuggestedSearchTerms() {
   if (searchBar == "") {
     divSearchSuggestions.style.display = "none";
     /* Changes lens icon style if there's no active search */
-    document.getElementById("lupa").setAttribute('src', './images/lupa_inactive_light.svg')
+    document.getElementById("lens").setAttribute('src', './images/lens_inactive_light.svg')
   }
+
   /* If there is content in the search bar displays dynamic search div */  
   else {
     divSearchSuggestions.style.display = "flex";
-    /* Changes lens icon style if theres an active search */
-    document.getElementById("lupa").setAttribute('src', './images/lupa_active_light.svg')
-
+    /* Changes lens icon style if there's an active search and changes search button style */
+    document.getElementById("lens").setAttribute('src', './images/lens_active_light.svg')
+    document.getElementById("searchButton").setAttribute('class', 'searchButtonDarkActive')
     /* Filters search history terms array if the current search term
     contains the character combination present in the dynamic search bar. 
     The "filteredTerms" variable returns and array with the filtered terms
     (the ones that had a match) */
+    var filteredTerms = historial.filter(function(searchTerm) {
+    return searchTerm.includes(searchBar)
+    })
 
-    //filtra el array del historial de terminos a partir de si algunos de los terminos 
-    //contiene la combinacion de caracteres que e encuentra en la barra de busqueda dinamica
-    // la var "filteredTerms" te devuele un array con los terminos "filtrados" es decir los que tuvieron 
-    // coincidencia 
-
-    var filteredTerms = historial.filter(function(searchTerm){
-      return searchTerm.includes(searchBar)
-      })
-      //Itera sobre el resultado del firtrado para dibujar las busquedas en
-      // el div de busquedas dinamicas
+    /* It iterates on filter results to print search terms in dynamic search div */
     for (let i = 0; i < 3; i++) {
-      // deposita el valor de la posicion de filtrados en termino
-      var termino = filteredTerms[i]
-//Evalua si esta vacio, en caso contrario dibuja el termino en el div de busquedadinamica 
-      if (termino != undefined) {
-        dibujoFiltrado = document.createElement("DIV")
-        dibujoFiltrado.setAttribute("class", "grayButtons")
-        dibujoFiltrado.innerHTML = termino
-        dibujoFiltrado.setAttribute("onclick", "getSearchResults('" + termino + "')")
-        divSearchSuggestions.appendChild(dibujoFiltrado)
+      /* It assigns as a value for the term variable the position value of the filters terms array */
+      var matchTerm = filteredTerms[i]
+      /* Evaluates if filtered terms array is empty and if is not the case, it prints 
+      the term in the dynamic search div */
+      if (matchTerm != undefined) {
+        matchTermDiv = document.createElement("DIV")
+        matchTermDiv.setAttribute("class", "grayButtons")
+        matchTermDiv.innerHTML = matchTerm
+        matchTermDiv.setAttribute("onclick", "getSearchResults('" + matchTerm + "')")
+        divSearchSuggestions.appendChild(matchTermDiv)
       }
     }
   }
@@ -228,7 +227,7 @@ function displaySuggestedSearchTerms() {
 
 /* SHOW SEARCH SUGGESTIONS */
 
-/* Converts the search history located in Local Storage (presented as a string) to an array */
+/* Converts the search history located in Local Storage (presented as a string) into an array */
 
 if (localStorage.getItem("historial")) {
   historial = localStorage.getItem("historial").split(",")
@@ -237,13 +236,10 @@ if (localStorage.getItem("historial")) {
 
 
 
-
-
-
-
-
-
 /*SUGGESTIONS*/
+
+/* It executes when the site loads. If the users hasn't made any searchs, it prints random
+gifs in screen to mantain the original desing of the page */
 
 function loadSuggestions() {
 
@@ -265,6 +261,7 @@ function loadSuggestions() {
 
 /*TRENDINGS*/
 
+/* It executes when the page loads printing trending gifs in screen */
 function loadTrendings() {
   url = 'http://api.giphy.com/v1/gifs/trending?api_key=' + apiKey + '&limit=24'
   gifContainer = 'trendingsContainer'
@@ -279,7 +276,7 @@ function loadTrendings() {
 
 /*SERVER REQUEST*/
 
-function serverRequest(url, gifContainer, classicShowData, Term, smallTrendingContainer) {
+function serverRequest(url, gifContainer, classicShowData, smallTrendingContainer) {
   const found =
     fetch(url)
       .then(function (response) {
@@ -287,7 +284,7 @@ function serverRequest(url, gifContainer, classicShowData, Term, smallTrendingCo
       })
       .then(function (data) {
         console.log(data)
-        showData(data, gifContainer, classicShowData, Term, smallTrendingContainer)
+        showData(data, gifContainer, classicShowData, smallTrendingContainer)
         return data
       })
       .catch(function (error) {
@@ -351,7 +348,7 @@ function showData(data, gifContainer, classicShowData) {
       are setted */
 
     } else {
-      createdImageToContainGif.setAttribute('class', 'gifStyle')
+      createdImageToContainGif.setAttribute('class', 'suggestionGif')
 
       /* Suggestion gifs title attributes */
     
@@ -368,7 +365,7 @@ function showData(data, gifContainer, classicShowData) {
       /* Suggestion gif little up bar attributes */
 
       var suggestionGifBar = document.createElement("DIV")
-      suggestionGifBar.setAttribute('class', 'barrita')
+      suggestionGifBar.setAttribute('class', 'suggestionGifBar titleBars')
       suggestionGifBar.innerHTML = '#' + gifName
 
       /* Suggestion gif "Ver más" button */

@@ -22,13 +22,13 @@
 		——————Donde los gifs están.////// Número de visitas: 12.765.803</div>
 		<nav>
 			<img onclick="backToHome()" id="logo" src="images/gifos_logo_light.png">
-			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span id="span2">M</span>is Guifos</button>
+			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span class="span1">M</span>is Guifos</button>
 			<div id="dropdown">
 				<button onclick="dropdown()" class="pinkButtons">Elegir tema</button>
-				<button onclick="dropdown()" class="pinkButtons" id="arrowButton"><img src="images/arrow_dropdown.svg" alt="Dropdown Arrow"></button>
+				<button onclick="dropdown()" class="pinkButtons" id="arrowButton"><img id="downArrow" src="images/arrow_dropdown.svg" alt="Dropdown Arrow"></button>
 				<div id="dropdownContent" class="dropdownContent">
 					<ul id="stylesList">
-						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span id="span2">S</span></u>ailor Day</button></li>
+						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span class="span1">S</span></u>ailor Day</button></li>
 						<li><button class="sailorButtons" onclick="changeToDarkTheme()">Sailor Night</button></li>
 					</ul>
 				</div>
@@ -44,7 +44,7 @@
 			<div class="titleBars" id="titleBarSearchSection">Buscar</div>
 			<input onkeyup="displaySuggestedSearchTerms()"  type="text" class="whiteBars" id="searchBar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
 			<button id="searchButton" type="submit" onclick="getSearchResults(); displayBlueButtons()">
-				<img id="lupa" src="images/lupa_inactive_light.svg">Buscar
+				<img id="lens" src="images/lens_inactive_light.svg">Buscar
 			</button>
 			<div class="grayContainer" id="divSearchSuggestions"></div>
 		</div>

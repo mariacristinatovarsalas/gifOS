@@ -12,7 +12,7 @@ function changeToLightTheme() {
     localStorage.setItem('theme', 'light')
     document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
     document.getElementById("logo").setAttribute("src", "../images/gifos_logo_light.png")
-    document.getElementById("lupa").setAttribute("src", "lupa_inactive.svg")
+    document.getElementById("lens").setAttribute("src", "lens_inactive.svg")
   }
   
   function changeToDarkTheme() {
@@ -20,7 +20,7 @@ function changeToLightTheme() {
     localStorage.setItem('theme', 'dark')
     document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
     document.getElementById("logo").setAttribute("src", "../images/gifos_logo_dark.png")
-    document.getElementById("lupa").setAttribute("src", "lupaDark.svg")
+    document.getElementById("lens").setAttribute("src", "lensDark.svg")
   }
   
 
@@ -107,7 +107,7 @@ function getStream() {
     document.getElementById("misGuifosBar").style.display = "none";
 
 
-    document.getElementById("crearGuifos").style.display = "none";
+    document.getElementById("crearGuifosGrayContainer").style.display = "none";
     //document.getElementById("video").style.display = "block";
     document.getElementById("videoContainer").style.display = "flex";
 
@@ -140,7 +140,7 @@ function getStream() {
 function startRecord() {
     document.getElementById("cameraButton").style.display = "none";
     document.getElementById("capturarButton").style.display = "none";
-    document.getElementById("titleBarGifCapture").innerHTML = "Capturando Tu Guifo";
+    document.getElementById("uploadTitleBar").innerHTML = "Capturando Tu Guifo";
     document.getElementById("listoButton").style.display = "inline-block";
     document.getElementById("recordingButton").style.display = "inline-block";
     recorder.startRecording()
@@ -162,7 +162,7 @@ function stopRecord() {
 function showPreview(blob) {
 
     document.getElementById("listoButton").style.display = "none";
-    document.getElementById("titleBarGifCapture").innerHTML = "Vista Previa";
+    document.getElementById("uploadTitleBar").innerHTML = "Vista Previa";
     document.getElementById("video").style.display = "none";
     document.getElementById("recordingButton").style.display = "none";
     document.getElementById("repetirCapturaButton").style.display = "inline-block";
@@ -171,11 +171,11 @@ function showPreview(blob) {
     url = URL.createObjectURL(blob)
     //URL.revokeObjectURL(url);
     console.log(url)
-    document.getElementById("gifPreview").src = url;
+    document.getElementById("video").src = url;
 }
 
 function gifCargadoConExitoAviso() {
-    document.getElementById("titleBarGifCapture").innerHTML = "Guifo Subido Con Éxito";
+    document.getElementById("uploadTitleBar").innerHTML = "Guifo Subido Con Éxito";
     document.getElementById("globeImg").style.display = "none";
     document.getElementById("pUploadingGif").style.display = "none";
     document.getElementById("h1UploadingGif").style.display = "none";
@@ -207,9 +207,9 @@ function uploadGif() {
     document.getElementById("repetirCapturaButton").style.display = "none";
     document.getElementById("subirGuifoButton").style.display = "none";
     document.getElementById("cancelarUploadButton").style.display = "inline-block";
-    document.getElementById("titleBarGifCapture").innerHTML = "Subiendo Guifo";
+    document.getElementById("uploadTitleBar").innerHTML = "Subiendo Guifo";
     document.getElementById("video").style.display = "none";
-    document.getElementById("gifPreview").style.display = "none";
+    document.getElementById("video").style.display = "none";
     document.getElementById("uploadingGif").style.display = "flex";
     document.getElementById("h1UploadingGif").style.display = "inline-block";
     document.getElementById("pUploadingGif").style.display = "inline-block";

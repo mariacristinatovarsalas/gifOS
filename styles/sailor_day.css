@@ -5,9 +5,11 @@
     font-family: 'Chakra Petch', sans-serif;
 }
 
+/* HOME */
+
 /* SECTION 1: HEADER */
 
-/* ELEMENTS */
+/* Elements */
 
 body {
     background-color: #f8f1f1;
@@ -18,7 +20,7 @@ nav {
     height: 17vh;
 }
 
-/* CLASSES */
+/* Classes */
 
 .titleBars {
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
@@ -74,8 +76,11 @@ nav {
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
 
-    
-/* ID */
+.span1 {
+    border-bottom: 1px solid black;
+}
+ 
+/* Id */
 
 #siteDescriptionBar { 
     width: inherit;
@@ -113,6 +118,11 @@ nav {
     margin-left: 10.5vw;
 }
 
+#downArrow {
+    width: 0.7vw;
+    height: 1.6vh;
+}
+
 #dropdownList { /* dropdown */
     list-style-type: none;
 }
@@ -134,14 +144,13 @@ nav {
     color: rgb(17,0,56,0.4);
 } 
 
-#span1 {
-    text-decoration: line-through;
-}
+
+
 
 
 /* SECTION 2: SEARCH */
 
-/* CLASSES */
+/* Classes */
 
 .grayContainer {
     height: 20vh;
@@ -185,7 +194,16 @@ nav {
     cursor: pointer;
 }
 
-/* ID */
+.searchButtonDarkActive {
+    background: #E6BBE2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
+    color: #110038;
+}
+
+/* Id */
 
 #searchSection {
     display: flex;
@@ -234,7 +252,7 @@ nav {
     color: #110038;
 }
 
-#lupa {
+#lens {
     width: 1.3vw;
     height: 1.3vw;
     margin: 0.2vh 0.4vw 0 -1.8vw;
@@ -246,13 +264,13 @@ nav {
     z-index: 4;
     flex-direction: column;
     display: none;
+    height: 0;
 }
 
 #divSearchSuggestions > div {
     width: 80vw;
     height: 5vh;
-    margin-left: 1.5vw;
-    margin-top: 2vh;
+    margin: 2vh 0 0 1.5vw;
 }
 
 
@@ -266,9 +284,8 @@ nav {
 }
 
 #searchResultsContainer {
-    margin-top: 8vh;
     width: 85vw;
-    margin-left: 7vw;
+    margin: 8vh 0 0 7vw;
     background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
@@ -281,95 +298,12 @@ nav {
 
 /* SECTION 3: SUGGESTIONS */
 
-#suggestionsSection {
-    margin-top: 3vh;
-    padding-top: 0;
-}
+/* Classes */
 
-.gifStyle {
+.suggestionGif {
     width: 96%;
     height: 96%;
-    margin-left: 0.4vw;
-    margin-top: 0.8vh;
-}
-
-.trendingGifs {
-    /*height: 40vh;*/
-    /*flex:auto;*/
-    /*margin: 1vw;*/
-    /*min-width: 10vw;*/
-    /*border: 1px solid red;*/
-    /*width: 100%;*/
-    height: 97%;
-    width: 98%;
-    /*width: 100%;*/
-    /*width: 100%;*/
-}
-
-.trendingGifs:hover {
-    border: 1.3px dotted #110038;
-}
-
-.trendingGifContainerSmall {
-    /*border: 1px solid red;*/
-    flex:auto;
-    height: 34vh;
-    margin: 0.7vw;
-    /*border: 1px solid red;*/
-    /*max-width: 25vw;*/
-    /*background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;*/
-    /*width: 20vw;
-    height: 35vh;*/
-    width: 20vw;
-    /*justify-content: center;
-    align-items: center;
-    display: flex;*/
-    /*padding: 0.5vh 0.2vw;*/
-}
-
-.trendingGifContainerSmall:hover {
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    
-}
-
-.trendingGifContainerBig {
-    /*width: 41vw;*/
-    height: 34vh;
-    margin: 0.7vw;
-    /*flex: auto;*/
-    width: 35vw;
-    /*display: flex;*/
-    /*padding: 0.5vh 0.2vw;*/
-    /*justify-content: center;
-    align-items: center;*/
-}
-
-.trendingGifContainerBig:hover{
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-}
-
-#trendingsContainer {
-    margin-top: 0;
-    width: 85.5%;
-    margin-left: 6.9vw;
-    background-color: #f8f1f1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#suggestionsContainer {
-    margin-top: 0;
-    width: 83.1vw;
-    margin-left: 8.1vw;
-    background-color: #f8f1f1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin: 0.8vh 0 0 0.4vw;
 }
 
 .suggestionGifContainer {
@@ -381,6 +315,37 @@ nav {
     display: flex;
 }
 
+.suggestionGifBar {
+    width: 18.75vw;
+    height: 2.8vh;
+    padding: 1vh 0 1vh 0.5vw;
+    margin: 0.6vh 0 0 0.4vw;
+    font-weight: bold;
+    z-index: 1;
+    position: absolute;
+}
+
+.buttonVerMas {
+    margin: 34.5vh 0 0 1vw;
+    position: absolute;
+}
+
+.closeButton {
+    width: 1vw;
+    height: 2vh;
+    margin: 2vh 0 0 18vw;
+    z-index: 3;
+    cursor: pointer;
+    position: absolute;
+    background: url("../images/button_close_img.svg") center center/cover no-repeat #cccccc;
+}
+
+/* Id */
+
+#suggestionsSection {
+    margin-top: 3vh;
+}
+
 #suggestionsBar {
     display: flex;
     width: 81.5vw;
@@ -388,55 +353,68 @@ nav {
     margin: 0 0 1vw 8vw;
 }
 
-.barrita {
-    width: 18.7vw;
-    /*height: 2.1vw;*/
-    background-color: pink;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-    margin-left: 0.4vw;
-    margin-top: 0vh;
-    z-index: 1;
-    position: absolute;
-    color: #FFFF;
-    font-weight: bold;
-    font-size: 2.2vh;
+#suggestionsContainer {
+    width: 83.8vw;
+    margin-left: 7.8vw;
     display: flex;
-    padding: 0;
-    height: 2.8vh;
-    padding: 1vh 0 1vh 0.5vw
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 
 
-.buttonVerMas {
-    margin-left: 1vw;
-    margin-top: 34.5vh;
-    position: absolute;
+
+
+/* SECTION 3: TRENDINGS */
+
+/* Classes */
+
+.trendingGifs {
+    height: 97%;
+    width: 98%;
 }
 
-.closeButton {
-    width: 1vw;
-    margin-top: 2vh;
-    margin-left: 18vw;
-    /*border: 1px solid red;*/
-    z-index: 3;
-    cursor: pointer;
-    position: absolute;
-  background-image: url("../images/button_close_img.svg"); 
-  background-color: #cccccc;
-  height: 2vh; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
+.trendingGifs:hover {
+    border: 1.3px dotted #110038;
 }
 
+.trendingGifContainerSmall {
+    flex: auto;
+    height: 34vh;
+    margin: 0.7vw;
+    width: 20vw;
+}
 
+.trendingGifContainerSmall:hover {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; 
+}
 
-/*#trendingsContainer:last-of-type {
-    max-width: 50%;
-}*/
+.trendingGifContainerBig {
+    height: 34vh;
+    margin: 0.7vw;
+    width: 35vw;
+}
 
+.trendingGifContainerBig:hover{
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
 
+/* Id */
+
+#trendingsSection {
+    margin-top: 10vh;
+    }
+
+#trendingsContainer {
+    width: 86%;
+    margin: 0 0 10vh 7.5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 #trendingsBar {
     display: flex;
@@ -446,73 +424,11 @@ nav {
 }
 
 
-#trendingsSection {
-margin-top: 10vh;
-}
 
-/*CREATE GIFS*/
 
-#crearGuifos {
-    width: 50vw;
-    height: 62vh;
-    margin-left: 24vw;
-    margin-top: 20vh;
-}
+/* UPLOAD */
 
-#uploadTitleBar {
-    width: 49.3vw;
-    margin-left: 0.2vw;
-    margin-top: 0.3vh;
-    position: absolute;
-    font-size: 1.2vw;
-    padding-left: 0.3vw;
-    padding-top: 0.7vh;
-    padding-bottom: 0.7vh;
-}
-
-p {
-    font-size: 1.1vw;
-    padding-left: 6vw;
-    padding-top: 16vh;
-    line-height: 2;
-    position: absolute;
-
-}
-
-h1 {
-    position: absolute;
-    margin-top: 10vh;
-    margin-left: 6vw;
-    font-size: 1.2vw;
-}
-
-#window {
-    width: 2.5vw;    
-    height: 5vh;
-    z-index: 1;
-    top: 34vh;
-    left: 26vw;
-    position: absolute;
-}
-
-#comenzarButton {
-    position: absolute;
-    margin-left: 37vw;
-    margin-top: 52vh;
-
-}
-
-#cancelarButton {
-    background-color: #FFF4FD;
-    margin-left: 25vw;
-    margin-top: 52vh;
-    position: absolute;
-}
-
-.uploadButtons {
-    display: inline-block;
-}
-
+/* INTRO */
 
 #arrowBack {
     width: inherit;
@@ -522,294 +438,224 @@ h1 {
 a {
     width: 2vw;
     height: 4vh;
-    margin-top: 9.7vh;
+    margin: 9.7vh 0 0 5vw;
     position: absolute;
-    margin-left: 5vw;
     cursor: pointer;
 }
+
+#crearGuifosGrayContainer {
+    width: 53vw;
+    height: 62vh;
+    margin: 20vh 0 0 24vw;
+}
+
+#uploadTitleBar {
+    width: 52.2vw;
+    padding: 0.5vh 0 0.5vh 0.3vw;
+    margin: 0.5vh 0 0 0.2vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+    z-index: 1;
+    position: absolute;
+}
+
+#closeUploadButton {
+    margin: 1.6vh 51vw;
+}
+
+#window {
+    width: 2.5vw;    
+    height: 5vh;
+    z-index: 1;
+    top: 10vh;
+    left: 2.2vw;
+    position: absolute;
+}
+
+h1 {
+    position: absolute;
+    margin: 10vh 0 0 6vw;
+    font-size: 1.2vw;
+}
+
+p {
+    padding: 16vh 0 0 6vw;
+    font-size: 1.1vw;
+    line-height: 2;
+    position: absolute;
+}
+
+.uploadButtons {
+    display: inline-block;
+}
+
+#cancelarButton {
+    margin: 52vh 0 0 25vw;
+    background-color: #FFF4FD;
+    position: absolute;
+}
+
+#comenzarButton {
+    position: absolute;
+    margin: 52vh 0 0 37vw;
+}
+
+
+
+/* VIDEO RECORDING TRY */
 
 #videoContainer {
     width: 53vw;
     height: 72vh;
-    display: none;
-    margin-top: 19vh;
-    margin-left: 23vw;
+    margin: 19vh 0 15vh 23vw;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     position: absolute;
-    margin-bottom: 15vh;
+    display: none;
 }
 
 #video {
     width: 97%;
     height: 77%;
-    display: inline-block;
-    margin-top: 6vh;
-    margin-left: 0.8vw;
+    margin: 6vh 0 0 0.8vw;
     object-fit: cover;
+    display: inline-block;
     position: absolute;
-}
-
-#titleBarGifCapture {
-    z-index: 1;
-    padding: 0.5vh 0 0.5vh 0.3vw;
-    font-weight: bold;
-    width: 52.2vw;
-    margin-top: 0.5vh;
-    margin-left: 0.2vw;
-    position: absolute;
-    font-size: 1.2vw;
 }
 
 #cameraButton {
-    margin-top: 64vh;
-    margin-left: 38.5vw;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    cursor: pointer;
-    position: absolute;
-    height: 4.5vh;
     width: 2.6vw;
+    margin: 64vh 0 0 38.5vw;
+    position: absolute;
 }
 
-#camera {
-    z-index: 2;
-    margin-left: -0.6vw;
-    margin-top: -1.9vh;
-    position: absolute;
-    width: 1.2vw;
-    height: 4vh;
+#cameraIcon { 
+    width: 1.5vw;
+    height: 2.5vh;
+    margin-top: 0.5vh;
 }
 
 #capturarButton {
-    background: #F7C9F3;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-height: 4.5vh;
-padding: 0.5vh 3vw;
-font-size: 1.2vw;
-margin-left: 41vw;
-margin-top: 64vh;
-position: absolute;
-cursor: pointer;
+    margin: 64vh 0 0 41vw;
 }
 
+/* RECORDING VIDEO */
+
 #listoButton {
-background: #FF6161;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
-height: 4.5vh;
-padding: 0.5vh 2vw;
-font-size: 1.2vw;
-margin-left: 44vw;
-margin-top: 64vh;
-position: absolute;
-cursor: pointer;
-width: 8vw;
-color: #FFFF;
-display: none;
+    margin: 64vh 0 0 41.3vw;
+    background: #FF6161;
+    color: #FFFF;
+    display: none;
 }
 
 #recordingButton {
-    margin-top: 64vh;
-    margin-left: 41.5vw;
+    width: 3vw;
+    margin: 64vh 0 0 38.4vw;
     background: #FF6161;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
-    cursor: pointer;
-    position: absolute;
-    height: 4.5vh;
-    width: 2.6vw;
     color: #FFFF;
     display: none;
 }
 
 #recordingIcon {
-    z-index: 2;
-    margin-left: -0.6vw;
-    margin-top: -1.5vh;
-    position: absolute;
     width: 1.3vw;
     height: 3vh;
+    margin: -1.5vh 0 0 -0.7vw;
+    position: absolute;
+    z-index: 2;
+    
 }
+
+/* GIF PREVIEW */
 
 #gifPreview {
     width: 97%;
-    height: 77%;
-    display: inline-block;
-    margin-top: 6vh;
-    margin-left: 0.8vw;
+    height: 77%;;
+    margin: 6vh 0 0 0.8vw;
     object-fit: cover;
+    display: inline-block;
     position: absolute;
 }
 
 #subirGuifoButton {
-    background: #F7C9F3;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-height: 4.5vh;
-padding: 0vw;
-width: 9vw;
-font-size: 1.2vw;
-margin-left: 43vw;
-margin-top: 64vh;
-position: absolute;
-cursor: pointer;
-display: none;
+    margin: 64vh 0 0 41.5vw;
+    display: none;
 }
 
 #repetirCapturaButton {
+    margin: 64vh 30vw;
     background:#FFF4FD ;
-    color: #110038;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    height: 4.5vh;
-    padding: 0.5vh 1vw;
-    font-size: 1.2vw;
-    margin-left: 31.4vw;
-    margin-top: 64vh;
-    position: absolute;
-    cursor: pointer;
     display: none;
 }
 
 #repetirCapturaButton:hover {
     background: #F0E5EE;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-outline: 1px dotted #110038;
-    outline-offset: -4px;
 } 
 
+/* UPLOADING GIF */
+
 #uploadingGif {
-    background-color: #FFFF;
     width: 51vw;
     height: 55vh;
-    margin-top: 6vh;
-    margin-left: 1vw;
+    margin: 6vh 0 0 1vw;
     background: #FFFFFF;
-border: 1px solid #979797;
-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 
 #cancelarUploadButton {
+    margin: 64vh 0 0 41.6vw;
     background: #FFF4FD;
-border: 1px solid #110038;
-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-display: none;
-width: 10vw;
-height: 4vh;
-position: absolute;
-margin-top: 64vh;
-margin-left: 41.8vw;
-cursor: pointer;
+    display: none;
 }
 
 #globeImg {
-    display: none;
     width: 3vw;
     height: 7vh;
-    margin-top: 14vh;
-    margin-left: 24vw;
+    margin: 14vh 0 0 24vw;
+    display: none;
     position: absolute;
 }
 
 #h1UploadingGif {
-    display: none;
+    margin: 22vh 0 0 18vw;
     font-weight: bold;
-    color: #110038;
-    margin-top: 22vh;
-    margin-left: 18vw;
     font-size: 1.2vw;
+    color: #110038;
     position: absolute;
-
+    display: none;
 }
 
 #pUploadingGif {
-    display: none;
-    color: rgba(17,0,56,0.64);
-    margin-top: 18vh;
-    margin-left: 8vw;
-    position: absolute;
+    margin: 18vh 0 0 8vw;
     font-size: 1.2vw;
+    color: rgba(17,0,56,0.64);
+    position: absolute;
+    display: none;
 }
-
-
 
 #span2 {
-    border-bottom: 1px solid black;
+    text-decoration: line-through;
 }
 
-#closeUploadButton {
-    margin-left: 51vw;
-    margin-top: 1.6vh;
-    position: absolute;
-
-}
-
-#misGuifosBar {
-    /*margin-top: 20vh;
-    position: absolute;*/
-    /*z-index: 2;*/
-    /*margin: 0;*/
-    background: #FFFFFF;
-    border: 1px solid #979797;
-    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-    font-size: 1.1vw;
-    padding: 0.7vh 0.6vw;
-    margin-top: 20vh;
-    width: 85vw;
-    margin-left: 6vw;
-    margin-bottom: 3vh;
-}
-
-#misGuifosContainer {
-    width: 87vw;
-    /*height: 90vh;*/
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 5.5vw;
-    margin-bottom: 8vh;
-    /*background-color: red;
-    display: flex;
-    font-size: 1.5vw;
-    font-weight: bold;
-    text-align: center;
-    padding-left: 28vw;
-    position: absolute;*/
-    /*z-index: 2;*/
-    /*margin-top: 50vh;
-    margin: 0;*/
-}
+/* SUCCESS CAPTURE */
 
 #copiarEnlaceGuifoButton {
-   display: none; 
-   background:#FFF4FD;
-   margin-top: 18vh;
-   margin-left: 33vw;
    width: 16vw;
-   padding: 0 1.7vw;
-   height: 6vh;
+   margin: 18vh 0 0 33vw;
+   background:#FFF4FD;
+   display: none; 
 }
 
 #descargarGuifoButton {
-    display: none;
-    background:#FFF4FD;
-    position: absolute;
-    width: 16vw;
-   padding: 0 1.7vw;
-   height: 6vh;
-   margin-top: 26vh;
-   margin-left: 33vw;
+   width: 16vw;
+   margin: 26vh 0 0 33vw;
+   background:#FFF4FD;
+   display: none;
 }
 
 #listoCargaGifButton {
+    margin: 53vh 0 0 38.5vw;
     display: none;
-    position: absolute;
-    margin-top: 58vh;
-    margin-left: 38.5vw;
-    height: 6vh;
 }
 
 #pGuifoSubido {
@@ -821,7 +667,6 @@ cursor: pointer;
 }
 
 #finalGifDeposit {
-    
     width: 99.3%;
     height: 99%;
     object-fit: cover;
@@ -834,27 +679,41 @@ cursor: pointer;
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-width: 29vw;
-height: 40vh;
-margin-top: 8vh;
+    width: 29vw;
+    height: 40vh;
+    margin-top: 8vh;
     margin-left: 2vw;
     position: absolute;
     display: none;
 }
 
-.gifShowedInMisGuifosContainer {
-    width: 20vw;
-    height: 40vh;
-    flex:auto;
-    margin: 0.5vw;
+#toDownload{
+    margin: 0;
 }
 
 
 
+/* MIS GUIFOS */
 
+#misGuifosBar {
+    width: 81.5vw;
+    padding: 1vh 0.7vw;
+    margin: 95vh 0 4vh 7.5vw;
+    font-size: 1.2vw;
+    background: #FFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
 
+#misGuifosContainer {
+    width: 94vw;
+    margin: 0 0 8vh 7vw;
+    display: flex;
+    flex-flow: row wrap
+}
 
-
-#paraDescargar{
-    margin: 0;
+.gifShowedInMisGuifosContainer {
+    width: 20vw;
+    margin: 0.5vw;
+    height: 36vh;
 }

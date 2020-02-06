@@ -22,7 +22,7 @@ function changeToLightTheme() {
     localStorage.setItem('theme', 'light')
     document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
     document.getElementById("logo").setAttribute("src", "../images/gifos_logo_light.png")
-    document.getElementById("lupa").setAttribute("src", "lupa_inactive.svg")
+    document.getElementById("lens").setAttribute("src", "lens_inactive.svg")
 }
 
 function changeToDarkTheme() {
@@ -30,7 +30,7 @@ function changeToDarkTheme() {
     localStorage.setItem('theme', 'dark')
     document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
     document.getElementById("logo").setAttribute("src", "../images/gifos_logo_dark.png")
-    document.getElementById("lupa").setAttribute("src", "lupaDark.svg")
+    document.getElementById("lens").setAttribute("src", "lensDark.svg")
 }
 
 
@@ -50,14 +50,11 @@ function backToHome() {
     location.replace("home.html")
 }
 
-
-
-
 gifHechosGuardados.forEach(function (gif) {
     let idgif = gif.data.id
     let url = "https://media0.giphy.com/media/" + idgif + "/giphy.gif"
     let img = document.createElement("img")
-    // let descargar= document.getElementById("paraDescargar")
+    // let descargar= document.getElementById("toDownload")
     img.setAttribute('class', 'gifShowedInMisGuifosContainer')
     img.setAttribute('src', url)
 // descargar.setAttribute("href",url)
@@ -65,28 +62,9 @@ gifHechosGuardados.forEach(function (gif) {
     divGifHechos.appendChild(img)
 })
 
-
-
-
-
-
-
 function backToHome() {
     location.replace("./home.html")
 }
-
-/*function changeToLightTheme() {
-    //console.log("to light")
-    document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
-    document.getElementById("logo").setAttribute("src", "styles/gifos_logo_light.png")
-  }
-  
-  function changeToDarkTheme() {
-    //console.log("to dark")
-  
-    document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
-    document.getElementById("logo").setAttribute("src", "../images/gifos_logo_dark.png")
-  }*/
 
 const apiKey = 'R6HlZmoZACiHenAqEf5l0jeXFDt2zUDG'
 
@@ -94,14 +72,15 @@ var recorder
 var blob
 var url
 
+/* GET STREAM */ 
+
+/* It executes clicking the "comenzar" button */
+
 function getStream() {
 
     document.getElementById("misGuifosContainer").style.display = "none";
     document.getElementById("misGuifosBar").style.display = "none";
-
-
-    document.getElementById("crearGuifos").style.display = "none";
-    //document.getElementById("video").style.display = "block";
+    document.getElementById("crearGuifosGrayContainer").style.display = "none";
     document.getElementById("videoContainer").style.display = "flex";
 
     navigator.mediaDevices.getUserMedia({
@@ -130,14 +109,49 @@ function getStream() {
         })
 }
 
+/* START RECORDING */
+
+/* It executes when clicking the "Capturar" button */
+
 function startRecord() {
     document.getElementById("cameraButton").style.display = "none";
     document.getElementById("capturarButton").style.display = "none";
-    document.getElementById("titleBarGifCapture").innerHTML = "Capturando Tu Guifo";
+    document.getElementById("uploadTitleBar").innerHTML = "Capturando Tu Guifo";
     document.getElementById("listoButton").style.display = "inline-block";
     document.getElementById("recordingButton").style.display = "inline-block";
     recorder.startRecording()
 }
+
+function repeatRecord() {
+    console.log("Por aqui pase")
+
+
+    // document.getElementById("listoButton").style.display = "block";
+    document.getElementById("uploadTitleBar").innerHTML = "Vista Previa";
+    document.getElementById("video").style.display = "block";
+    document.getElementById("cameraButton").style.display = "block";
+
+    // document.getElementById("recordingButton").style.display = "block";
+    document.getElementById("repetirCapturaButton").style.display = "none";
+    document.getElementById("subirGuifoButton").style.display = "none";
+    document.getElementById("gifPreview").style.display="none"
+    document.getElementById("videoContainer").style.display = "flex";
+    document.getElementById("capturarButton").style.display = "block";
+
+
+    // recorder.stopRecording(function (gif) {
+    //     console.log(gif)
+    // })
+
+    // blob = recorder.getBlob()
+    // console.log(blob)
+    // showPreview(blob)
+    getStream()
+}
+
+/* STOP RECORDING */
+
+/* It executes when clicking the "Listo" button */
 
 function stopRecord() {
 
@@ -148,14 +162,17 @@ function stopRecord() {
     blob = recorder.getBlob()
     console.log(blob)
     showPreview(blob)
-
-
 }
 
+/* SHOW PREVIEW */
+
+/* It executes inside the "stopRecord" function and displays the gif preview */
+
 function showPreview(blob) {
+    document.getElementById("gifPreview").style.display="block";
 
     document.getElementById("listoButton").style.display = "none";
-    document.getElementById("titleBarGifCapture").innerHTML = "Vista Previa";
+    document.getElementById("uploadTitleBar").innerHTML = "Vista Previa";
     document.getElementById("video").style.display = "none";
     document.getElementById("recordingButton").style.display = "none";
     document.getElementById("repetirCapturaButton").style.display = "inline-block";
@@ -169,7 +186,7 @@ function showPreview(blob) {
 }
 
 function gifCargadoConExitoAviso() {
-    document.getElementById("titleBarGifCapture").innerHTML = "Guifo Subido Con Éxito";
+    document.getElementById("uploadTitleBar").innerHTML = "Guifo Subido Con Éxito";
     document.getElementById("globeImg").style.display = "none";
     document.getElementById("pUploadingGif").style.display = "none";
     document.getElementById("h1UploadingGif").style.display = "none";
@@ -190,20 +207,15 @@ function gifCargadoConExitoAviso() {
 
 }
 
-
-
-
-
-
-
 function uploadGif() {
+    document.getElementById("gifPreview").style.display="none";
 
     document.getElementById("repetirCapturaButton").style.display = "none";
     document.getElementById("subirGuifoButton").style.display = "none";
     document.getElementById("cancelarUploadButton").style.display = "inline-block";
-    document.getElementById("titleBarGifCapture").innerHTML = "Subiendo Guifo";
+    document.getElementById("uploadTitleBar").innerHTML = "Subiendo Guifo";
     document.getElementById("video").style.display = "none";
-    document.getElementById("gifPreview").style.display = "none";
+    document.getElementById("video").style.display = "none";
     document.getElementById("uploadingGif").style.display = "flex";
     document.getElementById("h1UploadingGif").style.display = "inline-block";
     document.getElementById("pUploadingGif").style.display = "inline-block";
@@ -245,11 +257,76 @@ function showData(res) {
     localStorage.setItem('gifHechos', JSON.stringify(gifHechosGuardados));
 }
 
+/* COPY GIF LINK */
+
+/* It executes when clicking the "copiar enlace guifo" button */
+
 function copiarEnlaceGuifo() {
     navigator.clipboard.writeText(urlUltimoUpload)
         .then(
             alert("Link Copiado! Pegalo y Compartelo con tus amigos!: " + urlUltimoUpload))
 }
+
+
+/*function repeatRecord() {
+    document.getElementById("misGuifosContainer").style.display = "none";
+    document.getElementById("misGuifosBar").style.display = "none";
+    document.getElementById("crearGuifosGrayContainer").style.display = "none";
+    document.getElementById("videoContainer").style.display = "flex";
+
+    navigator.mediaDevices.getUserMedia({
+        audio: false,
+        video: {
+            height: { max: 480 }
+        }
+    })
+        .then(function (stream) {
+            video.srcObject = stream;
+            document.getElementById("video").src = stream
+            video.play()
+
+            recorder = RecordRTC(stream, {
+                type: 'gif',
+                frameRate: 1,
+                quality: 10,
+                width: 360,
+                hidden: 240,
+                onGifRecordingStarted: function () {
+                    console.log('started')
+                },
+            });
+
+            console.log(recorder)
+        })
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
