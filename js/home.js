@@ -43,7 +43,11 @@ function getSearchResults(term) {
   /* If search term is different from an empty string, the server request function
     is executed with the following parameters */
   if (searchedTerm !== "") {
+<<<<<<< HEAD
     url = 'https://api.giphy.com/v1/gifs/search?q=' + searchedTerm + '&api_key=' + apiKey + '&limit=24'
+=======
+    url = 'http://api.giphy.com/v1/gifs/search?q=' + searchedTerm + '&api_key=' + apiKey + '&limit=24'
+>>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
     gifContainer = 'searchResultsContainer'
     serverRequest(url, gifContainer, true)
     document.getElementById('suggestionsSection').style.display = "none";
