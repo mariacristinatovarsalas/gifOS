@@ -130,15 +130,9 @@ nav {
 }
 
 #downArrow {
-<<<<<<< HEAD
     width: 1.5vw;
     height: 3.5vh;
     margin-top: 0.5vh;
-=======
-    width: 1.7vw;
-    height: 3.5vh;
-    margin-top: 0.3vh;
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
 }
 
 #dropdownList { /* dropdown */
@@ -505,11 +499,7 @@ a {
 }
 
 #uploadTitleBarIntro {
-<<<<<<< HEAD
     width: 52.4vw;
-=======
-    width: 52.2vw;
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
     padding: 0.5vh 0 0.5vh 0.3vw;
     margin: 0.5vh 0 0 0.2vw;
     font-weight: bold;
@@ -604,20 +594,10 @@ p {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 #capturarButton:hover {
     background: #EE3EFE;
     outline-offset: none;
     outline: none;
-=======
-
-#cameraIcon { 
-    width: 1.7vw;
-    height: 2.7vh;
-    border: none;
-    margin-top: 0.5vh;
-    background: url(../images/camera_dark.svg) center center/cover no-repeat;
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
 }
 
 #capturarButton {

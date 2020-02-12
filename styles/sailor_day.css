@@ -78,11 +78,8 @@ nav {
 }
 
 .span1 { border-bottom: 1px solid black; }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
  
 /* Id */
 
@@ -210,7 +207,6 @@ nav {
 
 .grayButtons:hover{
     background: #c0bcbc; 
-<<<<<<< HEAD
     outline: 1px dotted #110038;
     outline-offset: -4px;
 }
@@ -234,8 +230,6 @@ nav {
     background: #E6BBE2;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-=======
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
     outline: 1px dotted #110038;
     outline-offset: -4px;
 }
@@ -291,30 +285,10 @@ nav {
 
 #searchBar {
     width: 68vw;
-<<<<<<< HEAD
-=======
     height: 6.5vh;
     margin: 8vh 0 0 1.5vw;
 }
 
-.searchButton {
-    width: 8vw;
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
-    height: 6.5vh;
-    margin: 8vh 0 0 1.5vw;
-}
-
-<<<<<<< HEAD
-=======
-.searchButton:active {
-    background: #E6BBE2;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    outline: 1px dotted #110038;
-    outline-offset: -4px;
-    color: #110038;
-}
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
 
 #lens {
     width: 1.3vw;
@@ -525,11 +499,7 @@ a {
 }
 
 #uploadTitleBarIntro {
-<<<<<<< HEAD
     width: 52.3vw;
-=======
-    width: 52.2vw;
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
     padding: 0.5vh 0 0.5vh 0.3vw;
     margin: 0.5vh 0 0 0.2vw;
     font-weight: bold;
@@ -623,34 +593,17 @@ p {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
-#cameraIcon { 
-    width: 1.5vw;
-    height: 2.5vh;
-    margin-top: 0.5vh;
-    background: url(../images/camera_light.svg);
-}
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
 
 #capturarButton {
     margin: 64vh 0 0 41vw;
 }
 
-<<<<<<< HEAD
 #capturarButton:hover {
     background: #F7C9F3;
     outline-offset: none;
     outline: none;
 }
 
-=======
-/*#wholeCaptureButton:hover .pinkButtons {  
-    background:  rgb(218, 176, 215); 
-    outline: 1px dotted #110038;
-    outline-offset: -4px;
-}*/
->>>>>>> 0a41b342fbe724cea9505f4cc8f13a5359556e80
 
 /* RECORDING VIDEO */
 
