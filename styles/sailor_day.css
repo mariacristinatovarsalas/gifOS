@@ -41,6 +41,7 @@ nav {
 }
 
 .pinkButtons:hover {
+    background: rgb(218, 176, 215); 
     outline: 1px dotted #110038;
     outline-offset: -4px;
 }
@@ -76,9 +77,9 @@ nav {
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.span1 {
-    border-bottom: 1px solid black;
-}
+.span1 { border-bottom: 1px solid black; }
+
+
  
 /* Id */
 
@@ -98,9 +99,13 @@ nav {
     position: absolute;
 }
 
-#crearGuifosButton {
-    margin-left: 58vw;
+#arrowBackHome {
+    width: inherit;
+    height: inherit;
+    display: none;
 }
+
+#crearGuifosButton { margin-left: 58vw; }
 
 #dropdown {  /* dropdown */
     margin-left: 70vw;
@@ -109,6 +114,7 @@ nav {
 }
 
 #dropdown:hover .pinkButtons {  /* dropdown */
+    background:  rgb(218, 176, 215); 
     outline: 1px dotted #110038;
     outline-offset: -4px;
 }
@@ -129,7 +135,9 @@ nav {
 
 #sailorDayButton {  /* dropdown */
     margin-bottom: 0vh;
+    background: #FFF4FD
 }
+
 
 #misGuifosButton {
     position: absolute;
@@ -144,6 +152,11 @@ nav {
     color: rgb(17,0,56,0.4);
 } 
 
+#span4 { border-bottom: 1px solid black; }
+
+#misGuifosButton:active #span4 {
+    border-bottom: 1px solid rgb(180, 172, 179);
+}
 
 
 
@@ -163,11 +176,9 @@ nav {
 }
 
 .whiteBars {
-    width: 68vw;
-    margin: 8vh 0 0 1.5vw;
-    font-weight: 400;
+    width: 81.5vw;
     font-size: 1.2vw;
-    padding-left: 1vw;
+    padding: 1vh 0.7vw;
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
@@ -194,13 +205,49 @@ nav {
     cursor: pointer;
 }
 
-.searchButtonDarkActive {
+.grayButtons:hover{
+    background: #c0bcbc; 
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
+}
+
+.searchButton {
+    width: 8vw;
+    height: 6.5vh;
+    padding-left: 2.6vw;
+    margin: 9vh 0 0 71.5vw;
+    font-size: 1.2vw;
+    text-align: left;
+    color: #B4B4B4;
+    background: #E6E6E6;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+    position: absolute; 
+}
+
+.searchButton:active {
     background: #E6BBE2;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     outline: 1px dotted #110038;
     outline-offset: -4px;
     color: #110038;
+}
+
+.searchButtonDarkActive {
+    width: 8.5vw;
+    height: 6.7vh;
+    padding-left: 1.8vh;
+    margin: 9vh 0 0 71.7vw;
+}
+
+.searchButtonDarkActive:active {
+    width: 8.5vw;
+    height: 6.7vh;
+    padding-left: 1.8vh;
+    margin: 9vh 0 0 71.7vw;
+    background: #997D97; 
 }
 
 /* Id */
@@ -224,33 +271,10 @@ nav {
 
 #searchBar {
     width: 68vw;
-    height: 8vh;
+    height: 6.5vh;
     margin: 8vh 0 0 1.5vw;
 }
 
-#searchButton {
-    width: 8vw;
-    height: 6.5vh;
-    padding-left: 2.6vw;
-    margin: 9vh 0 0 71.5vw;
-    font-size: 1.2vw;
-    text-align: left;
-    color: #B4B4B4;
-    background: #E6E6E6;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-    cursor: pointer;
-    position: absolute; 
-}
-
-#searchButton:active {
-    background: #E6BBE2;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    outline: 1px dotted #110038;
-    outline-offset: -4px;
-    color: #110038;
-}
 
 #lens {
     width: 1.3vw;
@@ -260,17 +284,19 @@ nav {
 }
 
 #divSearchSuggestions {
+    width: 81.8vw;
+    height: auto;
+    padding: 3vh 0 0 1.7vw;
     margin: 20vh 0 0 0;
     z-index: 4;
     flex-direction: column;
     display: none;
-    height: 0;
 }
 
 #divSearchSuggestions > div {
-    width: 80vw;
-    height: 5vh;
-    margin: 2vh 0 0 1.5vw;
+    width: 79vw;
+    padding: 0.7vh 0 0.7vh 0.7vw;
+    margin-bottom: 3vh; 
 }
 
 
@@ -285,7 +311,7 @@ nav {
 
 #searchResultsContainer {
     width: 85vw;
-    margin: 8vh 0 0 7vw;
+    margin: 8vh 0 10vh 7vw;
     background-color: #f8f1f1;
     display: flex;
     flex-direction: row;
@@ -315,19 +341,33 @@ nav {
     display: flex;
 }
 
+.suggestionGifContainer:hover {
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
+}
+
 .suggestionGifBar {
     width: 18.75vw;
     height: 2.8vh;
     padding: 1vh 0 1vh 0.5vw;
     margin: 0.6vh 0 0 0.4vw;
     font-weight: bold;
+    font-size: 1.2vw;
     z-index: 1;
     position: absolute;
 }
 
 .buttonVerMas {
-    margin: 34.5vh 0 0 1vw;
+    margin: 34vh 0 0 1vw;
     position: absolute;
+    width: 14vh;
+    height: 5vh;
+}
+
+.buttonVerMas:hover {
+    background: rgb(10, 75, 194);
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
 }
 
 .closeButton {
@@ -347,9 +387,6 @@ nav {
 }
 
 #suggestionsBar {
-    display: flex;
-    width: 81.5vw;
-    padding: 1.2vh 0.6vw; 
     margin: 0 0 1vw 8vw;
 }
 
@@ -373,6 +410,7 @@ nav {
 .trendingGifs {
     height: 97%;
     width: 98%;
+    margin: 0.3vh 0 0 0.15vw;
 }
 
 .trendingGifs:hover {
@@ -381,7 +419,7 @@ nav {
 
 .trendingGifContainerSmall {
     flex: auto;
-    height: 34vh;
+    height: 43vh;
     margin: 0.7vw;
     width: 20vw;
 }
@@ -392,7 +430,7 @@ nav {
 }
 
 .trendingGifContainerBig {
-    height: 34vh;
+    height: 43vh;
     margin: 0.7vw;
     width: 35vw;
 }
@@ -417,9 +455,6 @@ nav {
 }
 
 #trendingsBar {
-    display: flex;
-    width: 81.5vw;
-    padding: 1.2vh 0.6vw; 
     margin: 0 0 1vw 8vw;
 }
 
@@ -445,8 +480,18 @@ a {
 
 #crearGuifosGrayContainer {
     width: 53vw;
-    height: 62vh;
+    height: 65vh;
     margin: 20vh 0 0 24vw;
+}
+
+#uploadTitleBarIntro {
+    width: 52.3vw;
+    padding: 0.5vh 0 0.5vh 0.3vw;
+    margin: 0.5vh 0 0 0.2vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+    z-index: 1;
+    position: absolute;
 }
 
 #uploadTitleBar {
@@ -490,14 +535,14 @@ p {
 }
 
 #cancelarButton {
-    margin: 52vh 0 0 25vw;
+    margin: 54vh 0 0 25vw;
     background-color: #FFF4FD;
     position: absolute;
 }
 
 #comenzarButton {
     position: absolute;
-    margin: 52vh 0 0 37vw;
+    margin: 54vh 0 0 37vw;
 }
 
 
@@ -525,35 +570,54 @@ p {
 
 #cameraButton {
     width: 2.6vw;
+    height: 5vh;
     margin: 64vh 0 0 38.5vw;
+    background: url(../images/camera_light.svg) center no-repeat #F7C9F3;
     position: absolute;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
 }
 
-#cameraIcon { 
-    width: 1.5vw;
-    height: 2.5vh;
-    margin-top: 0.5vh;
-}
 
 #capturarButton {
     margin: 64vh 0 0 41vw;
 }
 
+#capturarButton:hover {
+    background: #F7C9F3;
+    outline-offset: none;
+    outline: none;
+}
+
+
 /* RECORDING VIDEO */
 
 #listoButton {
+    width: 10.5vw;
+    height: 5vh;
     margin: 64vh 0 0 41.3vw;
-    background: #FF6161;
+    font-size: 1.2vw;
     color: #FFFF;
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
     display: none;
+    position: absolute;
+    cursor: pointer;
 }
 
+
 #recordingButton {
-    width: 3vw;
-    margin: 64vh 0 0 38.4vw;
+    width: 2.5vw;
+    height: 5vh;
+    margin: 64vh 0 0 39vw;
     background: #FF6161;
-    color: #FFFF;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
     display: none;
+    position: absolute;
+    cursor: pointer;
 }
 
 #recordingIcon {
@@ -609,15 +673,15 @@ p {
 }
 
 #globeImg {
-    width: 3vw;
+    width: 2.7vw;
     height: 7vh;
-    margin: 14vh 0 0 24vw;
+    margin: 17vh 0 0 24vw;
     display: none;
     position: absolute;
 }
 
 #h1UploadingGif {
-    margin: 22vh 0 0 18vw;
+    margin: 26vh 0 0 18vw;
     font-weight: bold;
     font-size: 1.2vw;
     color: #110038;
@@ -626,7 +690,7 @@ p {
 }
 
 #pUploadingGif {
-    margin: 18vh 0 0 8vw;
+    margin: 15vh 0 0 8vw;
     font-size: 1.2vw;
     color: rgba(17,0,56,0.64);
     position: absolute;
@@ -696,13 +760,11 @@ p {
 /* MIS GUIFOS */
 
 #misGuifosBar {
-    width: 81.5vw;
-    padding: 1vh 0.7vw;
-    margin: 95vh 0 4vh 7.5vw;
-    font-size: 1.2vw;
-    background: #FFFF;
-    border: 1px solid #979797;
-    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    margin: 94vh 0 4vh 7.5vw; 
+}
+
+#misGuifosBarInSection {
+    margin: 10vh 0 4vh 7.5vw;
 }
 
 #misGuifosContainer {

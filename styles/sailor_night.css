@@ -12,7 +12,7 @@
 /* Elements */
 
 body {
-    background-color:#110038;
+    background-color: #110038;
 }
 
 nav {
@@ -23,7 +23,7 @@ nav {
 /* Classes */
 
 .titleBars {
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     color: #FFFFFF;
 }
 
@@ -33,14 +33,20 @@ nav {
     width: 10.5vw;
     height: 5vh;
     font-size: 1.2vw;
-    color: #110038;
-    background-color: #F7C9F3;
+    color: #FFFF;
+    background: #EE3EFE;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    cursor: pointer;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .pinkButtons:hover {
+    background: rgb(208, 45, 223); 
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
+}
+
+.pinkButtons:active {
+    background: rgb(208, 45, 223); 
     outline: 1px dotted #110038;
     outline-offset: -4px;
 }
@@ -50,10 +56,11 @@ nav {
     position: absolute;
     z-index: 2;
     overflow: auto;
-    width: 13.3vw;
+    width: 13.2vw;
     margin-top: 16vh; 
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;   
+    background:#B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; 
+    border: 1px solid gray;  
 }
 
 .show {display: block;} /* dropdown */
@@ -76,12 +83,9 @@ nav {
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.span1 {
-    border-bottom: 1px solid black;
-}
+#span4 { border-bottom: 1px solid #FFFF; }
 
-
-    
+ 
 /* Id */
 
 #siteDescriptionBar { 
@@ -100,9 +104,13 @@ nav {
     position: absolute;
 }
 
-#crearGuifosButton {
-    margin-left: 58vw;
+#arrowBackHome {
+    width: inherit;
+    height: inherit;
+    display: none;
 }
+
+#crearGuifosButton { margin-left: 58vw; }
 
 #dropdown {  /* dropdown */
     margin-left: 70vw;
@@ -111,6 +119,7 @@ nav {
 }
 
 #dropdown:hover .pinkButtons {  /* dropdown */
+    background: rgb(208, 45, 223);
     outline: 1px dotted #110038;
     outline-offset: -4px;
 }
@@ -121,8 +130,9 @@ nav {
 }
 
 #downArrow {
-    width: 0.7vw;
-    height: 1.6vh;
+    width: 1.5vw;
+    height: 3.5vh;
+    margin-top: 0.5vh;
 }
 
 #dropdownList { /* dropdown */
@@ -131,22 +141,39 @@ nav {
 
 #sailorDayButton {  /* dropdown */
     margin-bottom: 0vh;
+    background: #CCCCCC;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+#span3 { border-bottom: 1px solid #FFFF; }
+
+#sailorNightButton {
+    background: #2E32FB;
+    color: #FFFF;
 }
 
 #misGuifosButton {
     position: absolute;
     width: 7vw;
     margin-left: 84.5vw;
+    color: #FFFF;
     background-color: transparent;
     box-shadow: none;
     border: none;
 }
 
+#misGuifosButton:hover {
+    outline: 1px dotted #FFFF;
+    outline-offset: -4px;
+}
+
 #misGuifosButton:active {
-    color: rgb(17,0,56,0.4);
+    color: rgba(255,255,255,0.6);
 } 
 
-
+#misGuifosButton:active #span4 {
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+} 
 
 
 
@@ -158,18 +185,16 @@ nav {
     height: 20vh;
     width: 83.5vw;
     margin-left: 7.8vw;
-    background: #E6E6E6;
+    background:#B4B4B4;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     position: absolute;
     display: flex;
 }
 
 .whiteBars {
-    width: 68vw;
-    margin: 8vh 0 0 1.5vw;
-    font-weight: 400;
+    width: 81.5vw;
     font-size: 1.2vw;
-    padding-left: 1vw;
+    padding: 1vh 0.7vw;
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
@@ -190,10 +215,30 @@ nav {
 }
 
 .grayButtons {
-    background: #F0F0F0;
+    cursor: pointer;
+    background: #CCCCCC;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-    cursor: pointer;
+}
+
+.grayButtons:hover{
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
+}
+
+.searchButtonDarkActive {
+    width: 8.5vw;
+    height: 6.7vh;
+    padding-left: 1.8vh;
+    margin: 9vh 0 0 71.7vw;
+}
+
+.searchButtonDarkActive:active {
+    width: 8.5vw;
+    height: 6.7vh;
+    padding-left: 1.8vh;
+    margin: 9vh 0 0 71.7vw;
+    background: rgb(208, 45, 223); ; 
 }
 
 /* Id */
@@ -217,32 +262,32 @@ nav {
 
 #searchBar {
     width: 68vw;
-    height: 8vh;
+    height: 6.5vh;
     margin: 8vh 0 0 1.5vw;
 }
 
-#searchButton {
+.searchButton {
     width: 8vw;
-    height: 6.5vh;
-    padding-left: 2.6vw;
+    height: 6.7vh;
+    padding-left: 2.7vw;
     margin: 9vh 0 0 71.5vw;
     font-size: 1.2vw;
     text-align: left;
-    color: #B4B4B4;
-    background: #E6E6E6;
+    color: rgba(143,143,143,1);
     border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
     position: absolute; 
+    background:  #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
-#searchButton:active {
-    background: #E6BBE2;
+.searchButton:active {
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     outline: 1px dotted #110038;
     outline-offset: -4px;
-    color: #110038;
+    color:#FFFF;
+    background: rgb(208, 45, 223); 
 }
 
 #lens {
@@ -253,6 +298,9 @@ nav {
 }
 
 #divSearchSuggestions {
+    width: 81.8vw;
+    height: auto;
+    padding: 3vh 0 0 1.7vw;
     margin: 20vh 0 0 0;
     z-index: 4;
     flex-direction: column;
@@ -260,10 +308,9 @@ nav {
 }
 
 #divSearchSuggestions > div {
-    width: 80vw;
-    height: 5vh;
-    margin-left: 1.5vw;
-    margin-top: 2vh;
+    width: 79vw;
+    padding: 0.7vh 0 0.7vh 0.7vw;
+    margin-bottom: 3vh; 
 }
 
 
@@ -278,8 +325,8 @@ nav {
 
 #searchResultsContainer {
     width: 85vw;
-    margin: 8vh 0 0 7vw;
-    background-color: #f8f1f1;
+    margin: 8vh 0 10vh 7vw;
+    background-color: #110038;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -303,9 +350,14 @@ nav {
     width: 20vw;
     height: 41vh;
     margin-right: 0.7vw;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.suggestionGifContainer:hover {
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
 }
 
 .suggestionGifBar {
@@ -314,13 +366,22 @@ nav {
     padding: 1vh 0 1vh 0.5vw;
     margin: 0.6vh 0 0 0.4vw;
     font-weight: bold;
+    font-size: 1.2vw;
     z-index: 1;
     position: absolute;
 }
 
 .buttonVerMas {
-    margin: 34.5vh 0 0 1vw;
+    margin: 34vh 0 0 1vw;
     position: absolute;
+    width: 14vh;
+    height: 5vh;
+}
+
+.buttonVerMas:hover {
+    background: rgb(10, 75, 194);
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
 }
 
 .closeButton {
@@ -340,9 +401,6 @@ nav {
 }
 
 #suggestionsBar {
-    display: flex;
-    width: 81.5vw;
-    padding: 1.2vh 0.6vw; 
     margin: 0 0 1vw 8vw;
 }
 
@@ -366,6 +424,7 @@ nav {
 .trendingGifs {
     height: 97%;
     width: 98%;
+    margin: 0.3vh 0 0 0.15vw;
 }
 
 .trendingGifs:hover {
@@ -374,25 +433,25 @@ nav {
 
 .trendingGifContainerSmall {
     flex: auto;
-    height: 34vh;
+    height: 43vh;
     margin: 0.7vw;
     width: 20vw;
 }
 
 .trendingGifContainerSmall:hover {
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; 
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .trendingGifContainerBig {
-    height: 34vh;
+    height: 43vh;
     margin: 0.7vw;
     width: 35vw;
 }
 
 .trendingGifContainerBig:hover{
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
 }
 
 /* Id */
@@ -410,9 +469,6 @@ nav {
 }
 
 #trendingsBar {
-    display: flex;
-    width: 81.5vw;
-    padding: 1.2vh 0.6vw; 
     margin: 0 0 1vw 8vw;
 }
 
@@ -438,8 +494,18 @@ a {
 
 #crearGuifosGrayContainer {
     width: 53vw;
-    height: 62vh;
+    height: 65vh;
     margin: 20vh 0 0 24vw;
+}
+
+#uploadTitleBarIntro {
+    width: 52.4vw;
+    padding: 0.5vh 0 0.5vh 0.3vw;
+    margin: 0.5vh 0 0 0.2vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+    z-index: 1;
+    position: absolute;
 }
 
 #uploadTitleBar {
@@ -483,14 +549,15 @@ p {
 }
 
 #cancelarButton {
-    margin: 52vh 0 0 25vw;
+    margin: 55vh 0 0 25vw;
     background-color: #FFF4FD;
     position: absolute;
+    color: black;
 }
 
 #comenzarButton {
     position: absolute;
-    margin: 52vh 0 0 37vw;
+    margin: 55vh 0 0 37vw;
 }
 
 
@@ -501,8 +568,8 @@ p {
     width: 53vw;
     height: 72vh;
     margin: 19vh 0 15vh 23vw;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     position: absolute;
     display: none;
 }
@@ -518,28 +585,42 @@ p {
 
 #cameraButton {
     width: 2.6vw;
+    height: 5vh;
     margin: 64vh 0 0 38.5vw;
+    background: url(../images/camera_dark.svg) center no-repeat #EE3EFE;
     position: absolute;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
 }
 
-#cameraIcon { 
-    width: 1.5vw;
-    height: 2.5vh;
-    margin-top: 0.5vh;
+#capturarButton:hover {
+    background: #EE3EFE;
+    outline-offset: none;
+    outline: none;
 }
 
 #capturarButton {
     margin: 64vh 0 0 41vw;
 }
 
+
 /* RECORDING VIDEO */
 
 #listoButton {
+    width: 10.5vw;
+    height: 5vh;
     margin: 64vh 0 0 41.3vw;
-    background: #FF6161;
+    font-size: 1.2vw;
     color: #FFFF;
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
     display: none;
+    position: absolute;
+    cursor: pointer;
 }
+
 
 #recordingButton {
     width: 3vw;
@@ -548,6 +629,7 @@ p {
     color: #FFFF;
     display: none;
 }
+
 
 #recordingIcon {
     width: 1.3vw;
@@ -574,15 +656,19 @@ p {
     display: none;
 }
 
+
 #repetirCapturaButton {
     margin: 64vh 30vw;
-    background:#FFF4FD ;
     display: none;
+    background: #110038;
+    border: 1px solid #B4B4B4;
+    box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
 }
 
 #repetirCapturaButton:hover {
-    background: #F0E5EE;
-} 
+    outline: 1px dotted #FFFF;
+    outline-offset: -4px;
+}
 
 /* UPLOADING GIF */
 
@@ -599,18 +685,19 @@ p {
     margin: 64vh 0 0 41.6vw;
     background: #FFF4FD;
     display: none;
+    color: black;
 }
 
 #globeImg {
     width: 3vw;
-    height: 7vh;
-    margin: 14vh 0 0 24vw;
+    height: 8vh;
+    margin: 17vh 0 0 24vw;
     display: none;
     position: absolute;
 }
 
 #h1UploadingGif {
-    margin: 22vh 0 0 18vw;
+    margin: 27vh 0 0 18vw;
     font-weight: bold;
     font-size: 1.2vw;
     color: #110038;
@@ -635,14 +722,16 @@ p {
 #copiarEnlaceGuifoButton {
    width: 16vw;
    margin: 18vh 0 0 33vw;
-   background:#FFF4FD;
+   background:#EE3EFE;
+   color: #FFFF;
    display: none; 
 }
 
 #descargarGuifoButton {
    width: 16vw;
    margin: 26vh 0 0 33vw;
-   background:#FFF4FD;
+   background:#EE3EFE;
+   color: #FFFF;
    display: none;
 }
 
@@ -689,13 +778,11 @@ p {
 /* MIS GUIFOS */
 
 #misGuifosBar {
-    width: 81.5vw;
-    padding: 1vh 0.7vw;
-    margin: 95vh 0 4vh 7.5vw;
-    font-size: 1.2vw;
-    background: #FFFF;
-    border: 1px solid #979797;
-    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    margin: 94vh 0 4vh 7.5vw; 
+}
+
+#misGuifosBarInSection {
+    margin: 10vh 0 4vh 7.5vw;
 }
 
 #misGuifosContainer {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +11,7 @@
 	<title>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.
 	////// Número de visitas: 12.765.803</title>
 	<link rel="stylesheet" href="styles/sailor_day.css" type="text/css" id="light">
-	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap">
+	<link rel= href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap">
 </head>
 
 
@@ -21,15 +21,16 @@
 		<div class="titleBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! 
 		——————Donde los gifs están.////// Número de visitas: 12.765.803</div>
 		<nav>
-			<img onclick="backToHome()" id="logo" src="images/gifos_logo_light.png">
-			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span class="span1">M</span>is Guifos</button>
+			<img onclick="backToHome()" id="logo" src="images/gifos_logo_light.png" alt="logo">
+			<a onclick="backToHome()"><img src="images/arrow_back.svg" id="arrowBackHome" alt="Back to home"></a>
+			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span id="span4">M</span>is Guifos</button>
 			<div id="dropdown">
 				<button onclick="dropdown()" class="pinkButtons">Elegir tema</button>
 				<button onclick="dropdown()" class="pinkButtons" id="arrowButton"><img id="downArrow" src="images/arrow_dropdown.svg" alt="Dropdown Arrow"></button>
 				<div id="dropdownContent" class="dropdownContent">
 					<ul id="stylesList">
-						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span class="span1">S</span></u>ailor Day</button></li>
-						<li><button class="sailorButtons" onclick="changeToDarkTheme()">Sailor Night</button></li>
+						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span class="span1">S</span>ailor Day</button></li>
+						<li><button class="sailorButtons" id="sailorNightButton" onclick="changeToDarkTheme()"><span id="span3">S</span>ailor Night</button></li>
 					</ul>
 				</div>
 			</div>
@@ -43,8 +44,8 @@
 		<div class="grayContainer">
 			<div class="titleBars" id="titleBarSearchSection">Buscar</div>
 			<input onkeyup="displaySuggestedSearchTerms()"  type="text" class="whiteBars" id="searchBar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-			<button id="searchButton" type="submit" onclick="getSearchResults(); displayBlueButtons()">
-				<img id="lens" src="images/lens_inactive_light.svg">Buscar
+			<button class="searchButton" id="searchButton" type="submit" onclick="getSearchResults(); displayBlueButtons()">
+				<img id="lens" src="images/lens_inactive_light.svg" alt="lens icon">Buscar
 			</button>
 			<div class="grayContainer" id="divSearchSuggestions"></div>
 		</div>
@@ -67,6 +68,7 @@
 		<div id="trendingsContainer"></div>
 	</section>
 
+	<script src="js/common_functions.js"></script>
 	<script src="js/home.js"></script>
 </body>
 

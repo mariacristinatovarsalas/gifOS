@@ -9,7 +9,6 @@
 	<meta name="description" content="¡Bienvenidos/as a Guifos.com! ——————
 	Donde los gifs están.////// Número de visitas: 12.765.803">
 	<title>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</title>
-	<link rel="" href="" sizes="" type="">
     <link rel="stylesheet" href="styles/sailor_day.css" type="text/css" id="light">
 	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
@@ -20,15 +19,16 @@
 		<div class="titleBars" id="siteDescriptionBar">¡Bienvenidos/as a Guifos.com! 
 		——————Donde los gifs están.////// Número de visitas: 12.765.803</div>
 		<nav>
-			<img onclick="backToHome()" id="logo" src="images/gifos_logo_light.png">
-			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span class="span1">M</span>is Guifos</button>
+			<img onclick="backToHome()" id="logo" src="images/gifos_logo_light.png" alt="logo">
+			<a onclick="backToHome()"><img src="images/arrow_back.svg" id="arrowBackHome" alt="Back to home"></a>
+			<button id="misGuifosButton" class="pinkButtons" onclick="redirectToMisGuifos()"><span id="span4">M</span>is Guifos</button>
 			<div id="dropdown">
 				<button onclick="dropdown()" class="pinkButtons">Elegir tema</button>
 				<button onclick="dropdown()" class="pinkButtons" id="arrowButton"><img id="downArrow" src="images/arrow_dropdown.svg" alt="Dropdown Arrow"></button>
 				<div id="dropdownContent" class="dropdownContent">
 					<ul id="stylesList">
-						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span class="span1">S</span></u>ailor Day</button></li>
-						<li><button class="sailorButtons" onclick="changeToDarkTheme()">Sailor Night</button></li>
+						<li><button class="sailorButtons" id="sailorDayButton" onclick="changeToLightTheme()"><span class="span1">S</span>ailor Day</button></li>
+						<li><button class="sailorButtons" id="sailorNightButton" onclick="changeToDarkTheme()"><span id="span3">S</span>ailor Night</button></li>
 					</ul>
 				</div>
 			</div>
@@ -37,10 +37,11 @@
 	</header>
 
 		
-		<div class="whiteBars" id="misGuifosBar">Mis Guifos</div>
+		<div class="whiteBars" id="misGuifosBarInSection">Mis Guifos</div>
 		<div id="misGuifosContainer"></div>
 
-	<script src="js/mis_guifos.js"></script>
+	<script src="js/common_functions.js"></script>
+	<script src="js/upload.js"></script>
 
 </body>
 
