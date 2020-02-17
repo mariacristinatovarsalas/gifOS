@@ -61,7 +61,7 @@ function changeToDarkTheme() {
     document.getElementById("downArrow").setAttribute("src", "images/dropdown_dark.png")
     document.getElementById("lens").setAttribute("src", "images/lens_inactive_"+theme+".svg")
   }
-  if (local.includes("/mis_guifos.html")) {
+  if(local.includes("/mis_guifos.html")){
     document.getElementById("downArrow").setAttribute("src", "images/dropdown_dark.png")
   }
 }
