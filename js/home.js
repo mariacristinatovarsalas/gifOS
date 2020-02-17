@@ -338,3 +338,5 @@ function removeSuggestionGif(deletedSuggestionGif) {
 function openInGhipy(link) {
   window.open(link);
 }
+
+document.getElementById("searchBar").addEventListener("keypress",function(e){if(e.which ==13){getSearchResults()}})

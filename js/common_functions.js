@@ -51,14 +51,16 @@ function themeSelection() {
     changeToLightTheme()
   }
 }
-
+var local =location.href
 function changeToDarkTheme() {
   localStorage.setItem('theme', 'dark')
   theme="dark"
   document.getElementById("light").setAttribute("href", "styles/sailor_night.css")
   document.getElementById("logo").setAttribute("src", "images/gifos_logo_dark.png")
-  document.getElementById("downArrow").setAttribute("src", "images/dropdown_dark.png")
-  document.getElementById("lens").setAttribute("src", "images/lens_inactive_"+theme+".svg")
+  if(!local.includes("/upload.html") && !local.includes("/mis_guifos.html")){
+    document.getElementById("downArrow").setAttribute("src", "images/dropdown_dark.png")
+    document.getElementById("lens").setAttribute("src", "images/lens_inactive_"+theme+".svg")
+  }
 }
 
 function changeToLightTheme() {
@@ -66,6 +68,8 @@ function changeToLightTheme() {
   theme="light"
   document.getElementById("light").setAttribute("href", "styles/sailor_day.css")
   document.getElementById("logo").setAttribute("src", "images/gifos_logo_light.png")
-  document.getElementById("downArrow").setAttribute("src", "images/arrow_dropdown.svg")
-  document.getElementById("lens").setAttribute("src", "images/lens_inactive_"+theme+".svg")
+  if(!local.includes("/upload.html") && !local.includes("/mis_guifos.html")){
+    document.getElementById("downArrow").setAttribute("src", "images/arrow_dropdown.svg")
+    document.getElementById("lens").setAttribute("src", "images/lens_inactive_"+theme+".svg")
+  }
 }
